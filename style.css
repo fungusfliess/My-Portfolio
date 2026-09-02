@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Julius Sans One Custom";
+    src: url("fonts\\julius-sans-one-latin-400-normal.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #5c5c5c;
+    background-image: url("../images/Group 1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+h1 {
+    font-family: "Julius Sans One Custom", sans-serif;
+    top: 32%;
+    font-size: 2vw;
+    letter-spacing: 0.1em;
+    color: black;
+    font-weight: 400;
+    position:absolute;
+}
+
+
+h2 {
+    font-family: "Julius Sans One Custom", sans-serif;
+    color: black;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Julius Sans One Custom", sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: medium;
+}
+
+h1:after {
+    content: "";
+    height: 1px;
+    width: 90%;
+    background-color: black;
+    opacity: 0.42;
+    top: calc(100% + 12px);
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#car-container {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    z-index: -1;
+}
+
+canvas {
+    display: block;
+}
+
+
+/* MOEV YOUR MOUSE */
+
+div#mouse-thing {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+/* SCHOOOL INFO STUFF */
+div#school-info {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+div.row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    width:fit-content;
+}
+div.row #loo-logo {
+    position: absolute;
+    left:100%;
+    margin-left: 5px;
+}
+
+/* TOP TITLE */
+div#top-title {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+h2::after {
+    content: "";
+    height: 1px;
+    background-color: black;
+    width: 110%;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top: calc(100% + 10px);
+}
+/* CAR METADATA */
+
+div#metadata {
+    display: flex;
+    bottom:5%;
+    left: 3%;
+    position: absolute;
+    flex-direction: column;
+}
+
+/* HIGHLIGHT */
+
+div.highlight {
+    width: 580px;
+    height: 380px;
+
+    position: relative;
+
+    border: 1px dashed #FFFFFF;
+}
+
+div.highlight::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: #FFFFFF4D;
+    mix-blend-mode: overlay;
+}
+
+/* ARROW */
+img#arrow {
+    position:absolute;
+    bottom:5%;
+}
