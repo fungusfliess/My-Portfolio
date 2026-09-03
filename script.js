@@ -11,7 +11,7 @@ const CAR_ROTATION_X = 0;
 const CAR_ROTATION_Y = 45;   // ← MAIN CAR ROTATION
 const CAR_ROTATION_Z = 0;
 
-const CAR_SCALE = 7.7;
+const CAR_SCALE = 6;
 
 const CAR_POSITION_X = -0.42;
 const CAR_POSITION_Y = -0.15;

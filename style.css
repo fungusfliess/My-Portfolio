@@ -37,12 +37,25 @@ body {
 
 h1 {
     font-family: "Julius Sans One Custom", sans-serif;
-    top: 32%;
-    font-size: 2vw;
+    font-size: 4vh;
+    top: 3vh;
     letter-spacing: 0.1em;
     color: black;
     font-weight: 400;
-    position:absolute;
+    text-align: center;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    height: 1px;
+    width: 60%;
+    background-color: black;
+    opacity: 0.42;
+    top: calc(100% + 12px);
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
 }
 
 
@@ -59,17 +72,7 @@ p {
     font-size: medium;
 }
 
-h1:after {
-    content: "";
-    height: 1px;
-    width: 90%;
-    background-color: black;
-    opacity: 0.42;
-    top: calc(100% + 12px);
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-}
+
 
 #car-container {
     width: 100%;
@@ -154,8 +157,8 @@ div#metadata {
 /* HIGHLIGHT */
 
 div.highlight {
-    width: 580px;
-    height: 380px;
+    height: 45vh;
+    aspect-ratio: 580/380;
 
     position: relative;
 
