@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: "Julius Sans One Custom";
-    src: url("fonts\\julius-sans-one-latin-400-normal.ttf") format("truetype");
+    src: url("fonts//julius-sans-one-latin-400-normal.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
