@@ -29,18 +29,20 @@
     <div class="hero">
 
         <div id="car-container"></div>
+        <div id = "floor"> </div>
 
-        
+        <h1 id = "form-title"> FORM</h1>
+        <h1 id = "function-title"> FUNCTION </h1>
 
         <div id = "mouse-thing"> 
             <p>MOVE YOUR MOUSE</p> 
-            <img src = "images/mouse.png"> 
+            <img class = "icon" src = "images/mouse.png"> 
         </div>
 
         <div id = "school-info"> 
             <div class = "row"> 
                 <p>WATERLOO  </p> 
-                <img id = "loo-logo" src = "images/Waterloo.png">
+                <img class = "icon"  id = "loo-logo" src = "images/Waterloo.png">
             </div>
             <p>HONOURS</p> 
             <p>COMPUTER ENGINEERING</p> 
@@ -49,26 +51,42 @@
         <div id = "top-title">
             <div class = "row">
                 <h2> JERRY NING</h2>
-                <img src = "images/GitHub.png">
-                <img src = "images/Instagram Circle.png">
-                <img src = "images/LinkedIn.png">
+                <img class = "icon"  src = "images/GitHub.png">
+                <img class = "icon" src = "images/Instagram Circle.png">
+                <img class = "icon" src = "images/LinkedIn.png">
             </div>
             <p> PORTFOLIO / 2026 </p>
         </div>
 
-        <div id = "metadata">
-            <p> 64K tris</p>
-            <p> BLENDER / WEBGL</p>
-        </div>
-
-        <img id = "arrow" src = "images/Vector 2.png">
+        
+        <img id = "arrow" class = "icon" src = "images/Vector 2.png">
 
         <div class = "highlight">
-            <h1> FORM / FUNCTION </h1>
+            <div id = "metadata">
+                <h2> HONDA NSX (NA1) </h2>
+                <p> 1991 - 2002</p>
+                <p> WIDE BODY KIT </p>
+                <p> 64K tris</p>
+                <p> BLENDER / WEBGL</p>
+            </div>
+        </div>
+
+        <button id = "dark-mode-button"> DARK MODE </button>
+    </div>
+
+    <div id = "nav"></div>
+    <div id = "about-me">
+        <img id = "profile-pic" src = "images\place-holder.png"> 
+        <div id = "about-me-text">
+            <h2> ABOUT ME </h2>
+            <p> I am a computer engineering student at the University of Waterloo. I have a passion for 3D modeling and web development, and I enjoy creating interactive experiences that showcase my skills in both areas. </p>
         </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="carScript.js"></script>
+    <script src="script.js"></script>
+
+    
 
 </body>
 
