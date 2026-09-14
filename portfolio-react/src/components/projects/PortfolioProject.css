@@ -1,0 +1,33 @@
+.portfolio-project {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.portfolio-project h1 {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+
+    font-size: 5vw;
+}
+
+.portfolio-project p {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+
+    font-size: 2vw;
+}
+
+.portfolio-project button {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+
+    font-size: 2vw;
+}

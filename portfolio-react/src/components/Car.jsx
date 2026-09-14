@@ -41,17 +41,17 @@ const CAMERA_LOOK_Z = 0;
 const CAR_COLOR = "#8f9193";
 const DARK_CAR_COLOR = "#000000";
 
-const CAR_METALNESS = 0.85;
-const CAR_ROUGHNESS = 0.2;
+const CAR_METALNESS = 0.9;
+const CAR_ROUGHNESS = 0.25;
 
 
 // ---------- LIGHTING ----------
 
 const AMBIENT_INTENSITY = 3;
 
-const FRONT_LIGHT_INTENSITY = 2;
-const SIDE_LIGHT_INTENSITY = 7;
-const BACK_LIGHT_INTENSITY = 10;
+const FRONT_LIGHT_INTENSITY = 5;
+const SIDE_LIGHT_INTENSITY = 10;
+const BACK_LIGHT_INTENSITY = 2;
 
 
 // ---------- MOUSE MOVEMENT ----------

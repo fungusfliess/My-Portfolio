@@ -42,3 +42,31 @@ body.dark-mode {
     background-color: rgb(71, 71, 71);
     background-image: url("/images/background-gradient-dark.png");
 }
+
+h1 {
+    font-family: "Bold Custom", sans-serif;
+    letter-spacing: 0;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+
+    position: absolute;
+    z-index: 1;
+}
+
+h2 {
+    font-family: "Julius Sans One Custom", sans-serif;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: "Julius Sans One Custom", sans-serif;
+}
+
+p {
+    font-family: "Julius Sans One Custom", sans-serif;
+    color: black;
+    font-weight: 400;
+}

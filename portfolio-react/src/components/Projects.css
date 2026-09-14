@@ -1,25 +1,27 @@
 .projects-section {
     width: 100%;
+;
     min-height: 100vh;
 
     padding: 8vw;
+    position: relative;
 }
 
 .projects-title {
-    font-size: clamp(3rem, 7vw, 7rem);
+    font-size: clamp(2rem, 6vw, 7rem);
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    margin-top: 4rem;
-}
+    width: 90%;
+    max-width: 1500px;
 
-.project-detail {
-    width: 100%;
-    min-height: 100vh;
-
-    padding: 8vw;
+    margin: 4rem auto 0;
 }
