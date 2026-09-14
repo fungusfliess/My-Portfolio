@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Julius Sans One Custom";
+    src: url("/fonts/julius-sans-one-latin-400-normal.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bold Custom";
+    src: url("/fonts/kdam-thmor-pro-khmer-400-normal.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background-color: #acacac;
+    background-image: url("/images/background-gradient.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: white;
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background-color: rgb(71, 71, 71);
+    background-image: url("/images/background-gradient-dark.png");
+}

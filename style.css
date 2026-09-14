@@ -222,15 +222,15 @@ div.highlight::before {
 /* ARROW */
 img#arrow {
     position:absolute;
-    bottom:5%;
+    bottom:3%;
 }
 
 /* NAV */
 div#nav {
     width: 100vw;
     height: 10vh;
-    border: dashed 1px white;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-block: 1.9px dashed  white;
+    background-image: linear-gradient(to right, #ffffff, #fdfcfc00, #ffffff), linear-gradient(to right, #49b6ff4d, #99999900);
 }
 
 /* ABOUT ME */
@@ -239,6 +239,8 @@ div#about-me {
     width: 100vw;
     height: 100vh;
     position:relative;
+    background-image: url("images/background-gradient.png");
+    background-size: cover;
 }
 
 #about-me #profile-pic {
@@ -246,16 +248,14 @@ div#about-me {
     top: 20%;
     bottom: 20%;
     left: 20%;
-    width: 27vw;
-    height: auto;
 }
 
 #about-me #about-me-text {
     position: absolute;
     top: 20%;
+    bottom: 20%;
     right: 20%;
     width: 25vw;
-    height:30vw;
     line-height: 2.5;
 }
 
@@ -294,6 +294,13 @@ body.dark-mode .icon {
 }
 body.dark-mode div.highlight{
     border-color: #FF5353;
+}
+body.dark-mode #about-me {
+    background-image: url("images/background-gradient-dark.png");
+}
+body.dark-mode div#nav {
+    border-color: #FF5353;
+    background-image: linear-gradient(to right, #050505, #ffffff00, #050505), linear-gradient(to right, #FF53534D, #99999900);
 }
 
 /* ===================== ANIAMTIONS! ======================== */
