@@ -9,7 +9,7 @@ function App() {
     const [darkMode, setDarkMode] = useState(true);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/My-Portfolio">
 
             <Routes>
 

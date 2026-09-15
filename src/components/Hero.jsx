@@ -12,8 +12,6 @@ function Hero({ darkMode, setDarkMode }) {
             <h1 id="form-title">FORM</h1>
             <h1 id="function-title">FUNCTION</h1>
 
-            
-
             <div id="school-info">
 
                 <div className="row">
@@ -21,7 +19,7 @@ function Hero({ darkMode, setDarkMode }) {
                     <img
                         className="icon"
                         id="loo-logo"
-                        src="/images/Waterloo.png"
+                        src={`${import.meta.env.BASE_URL}images/Waterloo.png`}
                     />
                 </div>
 
@@ -34,9 +32,21 @@ function Hero({ darkMode, setDarkMode }) {
 
                 <div className="row">
                     <h2>JERRY NING</h2>
-                    <img className="icon" src="/images/GitHub.png" />
-                    <img className="icon" src="/images/Instagram Circle.png" />
-                    <img className="icon" src="/images/LinkedIn.png" />
+
+                    <img
+                        className="icon"
+                        src={`${import.meta.env.BASE_URL}images/GitHub.png`}
+                    />
+
+                    <img
+                        className="icon"
+                        src={`${import.meta.env.BASE_URL}images/Instagram Circle.png`}
+                    />
+
+                    <img
+                        className="icon"
+                        src={`${import.meta.env.BASE_URL}images/LinkedIn.png`}
+                    />
                 </div>
 
                 <p>PORTFOLIO / 2026</p>
@@ -46,7 +56,7 @@ function Hero({ darkMode, setDarkMode }) {
             <img
                 id="arrow"
                 className="icon"
-                src="/images/Vector 2.png"
+                src={`${import.meta.env.BASE_URL}images/Vector 2.png`}
             />
 
             <div className="highlight">
@@ -58,9 +68,14 @@ function Hero({ darkMode, setDarkMode }) {
                     <p>64K tris</p>
                     <p>BLENDER / WEBGL</p>
                 </div>
+
                 <div id="mouse-thing">
                     <p>MOVE YOUR MOUSE</p>
-                    <img className="icon" src="/images/mouse.png" />
+
+                    <img
+                        className="icon"
+                        src={`${import.meta.env.BASE_URL}images/mouse.png`}
+                    />
                 </div>
 
             </div>

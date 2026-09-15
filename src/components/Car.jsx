@@ -12,6 +12,8 @@ import "./Car.css";
 
 // ---------- CAR ----------
 
+const carPath = `${import.meta.env.BASE_URL}models/car.glb`;
+
 const CAR_ROTATION_X = 0;
 const CAR_ROTATION_Y = 50;
 const CAR_ROTATION_Z = 0;
@@ -369,7 +371,7 @@ function Car({ darkMode }) {
         const loader = new GLTFLoader();
 
         loader.load(
-            "/models/car.glb",
+            `${import.meta.env.BASE_URL}models/car.glb`,
 
             function (gltf) {
 
