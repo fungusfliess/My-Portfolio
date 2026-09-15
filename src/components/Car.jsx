@@ -12,8 +12,6 @@ import "./Car.css";
 
 // ---------- CAR ----------
 
-const carPath = `${import.meta.env.BASE_URL}models/car.glb`;
-
 const CAR_ROTATION_X = 0;
 const CAR_ROTATION_Y = 50;
 const CAR_ROTATION_Z = 0;
@@ -221,13 +219,13 @@ function Car({ darkMode }) {
             alpha: true
         });
 
+        renderer.setPixelRatio(
+            Math.min(window.devicePixelRatio, 2)
+        );
+
         renderer.setSize(
             window.innerWidth,
             window.innerHeight
-        );
-
-        renderer.setPixelRatio(
-            Math.min(window.devicePixelRatio, 2)
         );
 
         renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -639,7 +637,7 @@ function Car({ darkMode }) {
 
 
             // ========================================================
-            // DARK MODE - FIRST PASS
+            // DARK MODE - NORMAL CAR PASS
             // ========================================================
 
             if (car) {
@@ -681,29 +679,17 @@ function Car({ darkMode }) {
             const canvasRect =
                 renderer.domElement.getBoundingClientRect();
 
-
-            const scaleX =
-                renderer.domElement.width
-                / canvasRect.width;
-
-            const scaleY =
-                renderer.domElement.height
-                / canvasRect.height;
-
-
             const x =
-                (rect.left - canvasRect.left)
-                * scaleX;
+                rect.left - canvasRect.left;
 
             const y =
-                (canvasRect.bottom - rect.bottom)
-                * scaleY;
+                canvasRect.bottom - rect.bottom;
 
             const width =
-                rect.width * scaleX;
+                rect.width;
 
             const height =
-                rect.height * scaleY;
+                rect.height;
 
 
             // ========================================================
