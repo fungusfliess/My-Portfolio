@@ -10,7 +10,7 @@ function Hero({ darkMode, setDarkMode }) {
             <div id="floor"></div>
 
             <h1 id="form-title">FORM</h1>
-            <h1 id="function-title">FUNCTION</h1>
+            <h1 id="function-title" >FUNCTION</h1>
 
             <div id="school-info">
 
