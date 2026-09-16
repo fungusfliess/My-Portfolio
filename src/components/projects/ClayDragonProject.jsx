@@ -246,6 +246,7 @@ function ClayDragonProject({ goBack }) {
                             src={image11}
                             alt="Finished dragon"
                         />
+                        
 
 
                         {/* DESCRIPTION */}
