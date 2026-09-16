@@ -18,7 +18,8 @@
 .projects-title {
     font-family: "Julius Sans One Custom", sans-serif;
     font-size: clamp(2rem, 6vw, 7rem);
-    top: 3%;
+    top: 5%;
+
     left: 50%;
     transform: translateX(-50%);
     position:absolute;
@@ -32,5 +33,5 @@
     width: 90%;
     max-width: 1500px;
 
-    margin: 4rem auto 0;
+    margin: 6rem auto 0;
 }

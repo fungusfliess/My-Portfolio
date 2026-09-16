@@ -1,0 +1,196 @@
+/* ============================================================
+   CHAINED DRAGON PROJECT
+============================================================ */
+
+.chained-project {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #111111;
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   BACK BUTTON
+============================================================ */
+
+.chained-back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    z-index: 10;
+
+    padding: 10px 20px;
+
+    color: white;
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   MAX WIDTH CONTENT
+============================================================ */
+
+.chained-content {
+    width: 100%;
+    max-width: 1500px;
+
+    margin-inline: auto;
+
+    padding: 0vw 5vw 12vw;
+
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.chained-title {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    position: relative;
+    width:100%;
+    height:30vh;
+    text-align: center;
+    
+}
+
+.chained-title h1 {
+        color: white;
+        font-family: "Julius Sans One Custom", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 5.5rem);
+        font-weight: 400;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        width:100%;
+}
+
+
+/* ============================================================
+   MAIN GALLERY
+============================================================ */
+
+.chained-gallery {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 4vw;
+
+    align-items: start;
+}
+
+
+/* ============================================================
+   LEFT SIDE
+============================================================ */
+
+.chained-left {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2vw;
+}
+
+.chained-main-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* TWO SMALL IMAGES */
+
+.chained-small-images {
+    display: grid;
+    grid-template-columns: 0.75fr 1.2fr;
+
+    gap: 2vw;
+
+    align-items: start;
+}
+
+.chained-small-images img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ============================================================
+   RIGHT SIDE
+============================================================ */
+
+.chained-right {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3vw;
+}
+
+
+/* DESCRIPTION */
+
+.chained-description {
+    padding-left: 1.5rem;
+
+    border-left: 1px dashed #ff5353;
+}
+
+.chained-description p {
+    margin: 0;
+
+    color: #aaaaaa;
+
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+    line-height: 1.8;
+}
+
+
+/* LARGE RIGHT IMAGE */
+
+.chained-right-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .chained-content {
+        padding: 6rem 1.5rem;
+    }
+
+    .chained-gallery {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+    .chained-small-images {
+        gap: 1rem;
+    }
+
+    .chained-right {
+        gap: 2rem;
+    }
+}

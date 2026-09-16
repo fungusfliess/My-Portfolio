@@ -24,7 +24,7 @@
     content: "";
     inset: 0;
     position: absolute;
-    border: 1px dashed #FF5353;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .project-card h3 {

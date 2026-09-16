@@ -19,9 +19,12 @@ function ProjectFooter({ goBack }) {
 
             </footer>
 
-            <p className="copyright">
-                © JERRY NING
-            </p>
+            <div className="copyright"> 
+                <p>
+                    © JERRY NING
+                </p>
+            </div>
+            
         </>
     );
 }

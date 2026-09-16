@@ -1,0 +1,469 @@
+/* ============================================================
+   PIANO PROJECT
+============================================================ */
+
+.piano-project {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #111111;
+    color: white;
+
+    overflow: hidden;
+}
+
+.piano-project img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ============================================================
+   MAX WIDTH CONTENT
+============================================================ */
+
+.piano-content {
+    width: 100%;
+    max-width: 2000px;
+
+    margin-inline: auto;
+    padding-inline: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   BACK BUTTON
+============================================================ */
+
+.piano-back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    z-index: 10;
+
+    padding: 10px 20px;
+
+    color: white;
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.piano-hero {
+    position: relative;
+
+    width: 100%;
+    height: 55vh;
+
+    overflow: hidden;
+
+    border-bottom: 1px dashed #ff5353;
+}
+
+.piano-hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.piano-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.6)
+    );
+}
+
+.piano-hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0;
+
+    color: white;
+
+    font-family: "Julius Sans One Custom", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    font-weight: 400;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   INTRO
+============================================================ */
+
+.piano-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: clamp(2rem, 6vw, 6rem);
+
+    align-items: center;
+
+    padding: 8vw 8vw 3vw 8vw;
+}
+
+.piano-intro img {
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.piano-intro-text {
+    color: #aaaaaa;
+
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+
+    line-height: 1.8;
+}
+
+.piano-intro-text p {
+    margin-bottom: 1.5rem;
+}
+
+
+/* ============================================================
+   LEARN MORE
+============================================================ */
+
+.piano-learn-more {
+    margin: 4vw 0 8vw;
+
+    color: #888888;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    line-height: 2;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   PROCESS — TOP TWO IMAGES
+============================================================ */
+
+.piano-process {
+    padding-bottom: 8vw;
+}
+
+.piano-process-top {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10vw;
+
+    padding: 0 6vw;
+}
+
+.piano-process-top img {
+    width: 100%;
+    height: 35vw;
+
+    max-height: 600px;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   PROCESS TEXT
+============================================================ */
+
+.piano-process-text {
+    width: 45%;
+
+    margin-top: 3vw;
+    margin-left: 6vw;
+
+    padding-left: 1.5rem;
+
+    border-left: 1px dashed #ff5353;
+
+    color: #aaaaaa;
+
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   PROCESS — SECOND ROW
+============================================================ */
+
+.piano-process-bottom {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        0.65fr
+        1.25fr;
+
+    gap: 2vw;
+
+    align-items: center;
+
+    margin-top: 4vw;
+    padding: 0 6vw;
+}
+
+.piano-process-description {
+    padding-right: 1rem;
+
+    color: #aaaaaa;
+
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+
+    line-height: 1.8;
+}
+
+.piano-small-images {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1vw;
+}
+
+.piano-small-images img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.piano-process-large {
+    width: 100%;
+    height: 32vw;
+
+    max-height: 550px;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   FINAL GALLERY
+============================================================ */
+
+.piano-gallery {
+    padding: 5vw 6vw 10vw;
+}
+
+
+/* ============================================================
+   TOP TWO
+============================================================ */
+
+.piano-gallery-top {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10vw;
+
+    align-items: start;
+}
+
+.piano-gallery-top img {
+    width: 100%;
+    height: 36vw;
+
+    max-height: 600px;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   PIANO SHOWCASE
+============================================================ */
+
+.piano-showcase {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2vw;
+
+    width: 100%;
+
+    margin-top: 5vw;
+}
+
+
+/* LEFT COLUMN */
+
+.piano-showcase-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+
+/* MIDDLE COLUMN */
+
+.piano-showcase-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+
+/* RIGHT COLUMN */
+
+.piano-showcase-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+
+/* TEXT */
+
+.piano-showcase-text {
+    padding-left: 1.5rem;
+
+    border-left: 1px dashed #ff5353;
+}
+
+.piano-showcase-text p {
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+    line-height: 1.8;
+}
+
+
+/* IMAGES */
+
+.piano-showcase img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+/* ============================================================
+   BOTTOM TWO
+============================================================ */
+
+.piano-gallery-bottom {
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 6vw;
+
+    width: 80%;
+
+    margin: 5vw auto 0;
+}
+
+.piano-gallery-bottom img {
+    width: 100%;
+    height: 32vw;
+
+    max-height: 550px;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .piano-content {
+        padding-inline: 15px;
+    }
+
+    .piano-hero {
+        height: 55vw;
+    }
+
+    .piano-intro {
+        grid-template-columns: 1fr;
+
+        padding: 4rem 1rem;
+    }
+
+    .piano-process-top {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        padding: 0 1rem;
+    }
+
+    .piano-process-top img {
+        height: auto;
+    }
+
+    .piano-process-text {
+        width: auto;
+
+        margin: 2rem 1rem;
+    }
+
+    .piano-process-bottom {
+        grid-template-columns: 1fr;
+
+        padding: 0 1rem;
+    }
+
+    .piano-process-large {
+        height: auto;
+    }
+
+    .piano-gallery {
+        padding: 3rem 1rem;
+    }
+
+    .piano-gallery-top,
+    .piano-gallery-middle,
+    .piano-gallery-row,
+    .piano-gallery-bottom {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 1rem;
+    }
+
+    .piano-gallery-top img,
+    .piano-gallery-tall,
+    .piano-gallery-row img,
+    .piano-gallery-bottom img {
+        height: auto;
+    }
+}

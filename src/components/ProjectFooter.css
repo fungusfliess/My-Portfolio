@@ -20,6 +20,8 @@
     align-items: center;
 
     padding: 2rem;
+    
+    background-color: black;
 }
 
 
@@ -42,4 +44,12 @@
 .project-footer button:hover {
 
     color: white;
+}
+
+.copyright {
+    background-color: black;
+    
+}
+.copyright p{
+    color:  #999999;
 }
