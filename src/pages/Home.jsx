@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ProjectFooter from "../components/ProjectFooter";
 
 import Hero from "../components/Hero.jsx";
 import Navbar from "../components/Navbar.jsx";
@@ -46,6 +47,8 @@ function Home({ darkMode, setDarkMode }) {
                 {activeSection === "contact" && <Contact />}
 
             </section>
+
+            <ProjectFooter/>
 
         </main>
     );

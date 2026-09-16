@@ -9,6 +9,14 @@
     justify-content: center;
 }
 
+.contact-section::before {
+    inset: 0;
+    background:linear-gradient(to top, black, transparent 20%), linear-gradient(to bottom, black, transparent 20%);
+    z-index:-1;
+    content:"";
+    position:absolute;
+}
+
 .contact-title {
     font-size: clamp(3rem, 8vw, 8rem);
     max-width: 1000px;

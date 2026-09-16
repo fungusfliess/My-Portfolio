@@ -1,4 +1,5 @@
 import "./ClayDragonProject.css";
+import ProjectFooter from "../ProjectFooter";
 
 // ============================================================
 // IMAGE IMPORTS — REPLACE THESE PATHS WITH YOUR REAL ONES
@@ -312,30 +313,6 @@ function ClayDragonProject({ goBack }) {
 
 
             </div>
-            {/* ======================================================
-                FOOTER
-            ====================================================== */}
-
-            <footer className="project-footer">
-
-                <button onClick={goBack}>
-                    ABOUT ME
-                </button>
-
-                <button onClick={goBack}>
-                    MY PROJECTS
-                </button>
-
-                <button>
-                    LINKEDIN
-                </button>
-
-            </footer>
-
-
-            <p className="copyright">
-                © JERRY NING
-            </p>
 
 
         </section>

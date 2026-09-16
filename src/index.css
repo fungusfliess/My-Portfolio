@@ -45,7 +45,7 @@ body.dark-mode {
 h1 {
     font-family: "Bold Custom", sans-serif;
     letter-spacing: 0;
-    color: black;
+    color: white;
     font-weight: 400;
     text-align: center;
 
@@ -55,17 +55,18 @@ h1 {
 
 h2 {
     font-family: "Julius Sans One Custom", sans-serif;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 400;
     margin-bottom: 10px;
 }
 
 h3 {
+    color: white;
     font-family: "Julius Sans One Custom", sans-serif;
 }
 
 p {
     font-family: "Julius Sans One Custom", sans-serif;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 400;
 }

@@ -9,6 +9,14 @@
     justify-content: center;
 }
 
+.about-section::before {
+    inset: 0;
+    background:linear-gradient(to top, black, transparent 20%), linear-gradient(to bottom, black, transparent 20%);
+    z-index:-1;
+    content:"";
+    position:absolute;
+}
+
 .section-label {
     font-size: 0.8rem;
 }

@@ -56,7 +56,7 @@ function Projects() {
     return (
         <section className="projects-section">
             {/* <p className="section-label">SELECTED WORK</p> */}
-            <h2 className="projects-title"> MY PROJECTS</h2>
+            <h1 className="projects-title"> MY PROJECTS</h1>
 
             <div className="projects-grid">
 

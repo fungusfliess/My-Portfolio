@@ -552,53 +552,6 @@
 }
 
 
-/* ============================================================
-   FOOTER
-============================================================ */
-
-.project-footer {
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.2);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.2);
-
-    display: flex;
-
-    justify-content:
-        space-around;
-
-    align-items: center;
-
-    padding: 2rem;
-}
-
-
-.project-footer button {
-
-    background: none;
-
-    border: none;
-
-    color: #999999;
-
-    font-size: 0.7rem;
-
-    letter-spacing: 0.15em;
-
-    cursor: pointer;
-}
-
-
-.project-footer button:hover {
-
-    color: white;
-}
-
-
 
 /* ============================================================
    COPYRIGHT

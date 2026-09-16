@@ -7,7 +7,7 @@
 
     text-align: left;
     background: transparent;
-    border: 1px solid black;
+
 
     cursor: pointer;
     position: relative;
@@ -15,6 +15,16 @@
     margin: 0;
     max-width: none;
     overflow: hidden;
+}
+
+
+.project-card::before {
+    background: linear-gradient(to top, black, transparent 50%),linear-gradient(to bottom, black, transparent 10%);
+    z-index: 1;
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 1px dashed #FF5353;
 }
 
 .project-card h3 {
@@ -45,6 +55,7 @@
     bottom: 0%;
     right: 0%;
     margin: 5px;
+    z-index: 2;
 }
 
 .project-card h3 {
@@ -52,6 +63,7 @@
     bottom: 10%;
     left: 10px;
     position:absolute;
+    z-index: 2;
 }
 
 .project-card img {
