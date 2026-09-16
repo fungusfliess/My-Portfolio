@@ -37,8 +37,7 @@
 }
 
 .hero h1 {
-    
-    background: linear-gradient(to top, #000000, #7e7d7d);
+    background: linear-gradient(to top, #000000 0%, #000000 30%, #7e7d7d);
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -49,6 +48,7 @@
 
     font-size: clamp(6rem, 12vw, 15rem);
 }
+
 
 .hero h1::after {
     background: linear-gradient(to right, #000000, #505050);
