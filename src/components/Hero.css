@@ -218,9 +218,14 @@
 
 #dark-mode-button {
     position: absolute;
-    right: 3%;
-    top: 3%;
+    right: clamp(30px, 5vw, 200px);
+    top: clamp(30px, 2vw, 50px);
     z-index: 3;
+    background-color:transparent;
+    color:white;
+    border:none;
+    font-size:clamp(0.8rem, 1.5vw, 1.5rem);
+    font-weight: 400;
 }
 
 /* DARK MODE */

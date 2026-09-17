@@ -61,12 +61,17 @@ function NSXProject({ goBack }) {
 
                     <div className="nsx-description">
                         <p>
-                            The clay dragon model is one of my most proud works,
-                            measuring in at 38cm in length and 30cm in width.
-                            This project took extremely long time, coming in at
-                            about 3 years. However the amount of time actually
-                            spent working on this project was probably around
-                            20 hours.
+                            Personally, I find cars extrememly cool, but I'm not the most knowledgeable on them. I wouldnt consider myself "a car guy".
+                            However, a very close friend of my is. He was the one who recommmeded this car model for me to model. 
+                            THe HONDA NSX(NA1) is a japanese car and the one I used as reference had the wide body kit attachment.
+                            I started this project back in 2023, and finished v1 a couple weeks later.
+                            Recenetly I went back to this project with more experience and improved the model.
+                            I was able to reduce teh triangles from some amount to some amount, heavily optimizing it.
+                            In that process, I also improved the overall topology to be much neater and more professional.
+                            This is now the final project, mirror and wheeless, a deliberate design choice.
+                            I left it this way to tailor it for this website, leaving it with a more engineering vibe.
+                            Unfinished, raw, but sexy.
+
                         </p>
                     </div>
 

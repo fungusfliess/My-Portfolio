@@ -69,19 +69,15 @@ function PianoProject({ goBack }) {
                     <div className="piano-intro-text">
 
                         <p>
-                            The clay dragon model is one of my most proud
-                            works, measuring in at 38cm in length and 30cm
-                            in width. This project took extremely long time,
-                            spanning in at about 3 years, however the amount
-                            of time actually spent working on this project
-                            was probably around 20 hours.
+                            The Clay piano was one of my most complex model, having several moving parts, and super tiny details.
+                            this project was actually a wedding gift for my piano teacher.
+                            This project start in march 2025, and finished in june 2025. 
+                            like most my projects, i took several long breaks in between, usualyl because i was busy with school.
+
                         </p>
 
                         <p>
-                            I took many long breaks due to deadlines in
-                            school, lack of motivation and other factors.
-                            This project took a lot of time, patience and
-                            attention to detail.
+                            This piano model 
                         </p>
 
                     </div>
@@ -102,27 +98,23 @@ function PianoProject({ goBack }) {
 
                     <div className="piano-process-top">
 
-                        <img
+                        <img className = "left-piano"
                             src={process1}
                             alt="Miniature piano construction"
                         />
 
-                        <img
+                        <img className = "right-piano"
                             src={process2}
                             alt="Miniature piano construction"
                         />
 
-                    </div>
+                        <div className="piano-process-text">
+                            <p>
+                                 the most complicated part of this model was figureing how to attach the fall board, and top lid and get the top lid to fold.
+                                the fall board was very difficult to get the perfect fit, requireing hours sanding, readding clay and cooking to get the perfect fit.
+                            </p>
 
-
-                    <div className="piano-process-text">
-
-                        <p>
-                            The clay dragon model is one of my most proud
-                            works, measuring in at 38cm in length and 30cm
-                            in width. This project took extremely long time,
-                            spanning in at about 3 years.
-                        </p>
+                        </div>
 
                     </div>
 
@@ -132,10 +124,21 @@ function PianoProject({ goBack }) {
                         <div className="piano-process-description">
 
                             <p>
-                                The clay dragon model is one of my most proud
-                                works. This section can explain the construction
-                                of the miniature piano, the materials you used,
-                                and how you created the individual pieces.
+                               
+                                after the fal board was shaped, tiny holes had to be made in the piano and in the fallboard itself.
+                                Using a small toothpick piece at each side to serve as the axis.
+                                the holes had to be perfectly aligned in order for the fallboard to properly open.
+                                additionally, glueing on the toothpicks was a very careful job, as it could end up glueing to the piano and no longer able to open.
+
+                            </p>
+                            <p>
+                                another extremely difficult task was contructing the piano lid. the lid has 2 hinges, one to fold the front lid over, and another to move the entire lid.
+                                the front lid hindge was impossible with hindges because of its scale.
+                                theres no commercial hindes that small.
+                                as a solution I used tape to tape both pieces together. 
+                                i then used a clear plastic sheet to cover the tape.
+                                then i bended the pieces back and forth several times, creating a bendable seam.
+                                this proved to be extremely sucessfull, leaving nearly no markings and very smooth fold.
                             </p>
 
                         </div>
@@ -191,14 +194,12 @@ function PianoProject({ goBack }) {
                         <div className="piano-showcase-left">
                             <div className="piano-showcase-text">
                                 <p>
-                                    The clay dragon model is one of my most proud works,
-                                    measuring in at 38cm in length and 30cm in width.
-                                    This project took a extremely long time, coming in at
-                                    about 3 years. however the amount of time actually
-                                    spent working on this project was probably around
-                                    20 hours. i took a very long break before deciding
-                                    to paint this piece. the modelling was the most time
-                                    consuming. the painting took a total of 4 hours.
+                                    The final project came out very sucessfull. I was almost able to incorperate all the realism that I wanted to.
+                                    the final project has just short of 88 keys, slightly less than a typical piano. 
+                                    however, the ratio of the keys to the piano is calculated and is actually almost identical to a real piano.
+                                    this model also features all the moving components, including a openable fallboard, lid, lid-stand, and a removeable music stand.
+                                    the interior is also almost 1:1 to a full sides grand piano.
+                                    equiped with tuning knobs, strings and of course the red felts.
                                 </p>
                             </div>
 

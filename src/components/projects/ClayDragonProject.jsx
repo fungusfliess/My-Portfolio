@@ -81,16 +81,22 @@ function ClayDragonProject({ goBack }) {
                         <div className="intro-text">
 
                             <p>
-                                This is where your introduction to the
-                                clay dragon project goes. You can explain
-                                why you decided to create it, what inspired
-                                the design, and what materials you used.
+                                the clay dragon model is one of my most proud works, measuring in at 30cm in lenght and 50 in width. 
+                                THis project took a extremely long time, coming in at about 3 years. 
+                                however the amount of time actualyl spent working on this project was probably around 20 hours. 
+                                i tooka very long break before decidign to paint this piece. 
+                                the modeling was the most time consuimgn. 
+                                the painting took a total of 4 hours.
                             </p>
 
                             <p>
-                                You can also talk about the scale of the
-                                project and some of the challenges involved
-                                in creating such a large physical model.
+                                50x30cm
+                            </p>
+                            <p>
+                                unamed dragon model
+                            </p>
+                            <p>
+                                medium: Clay
                             </p>
 
                         </div>
@@ -171,16 +177,15 @@ function ClayDragonProject({ goBack }) {
                             <div className="process-text">
 
                                 <p>
-                                    This section can explain the construction
-                                    process before the dragon was painted.
-                                    Talk about how the body, wings, head, and
-                                    smaller details were formed.
+                                    The Dragon is first made withg a skeleton model, a aluminium wire that runs through the entire model.
+                                    this skeleton is then covered in tinfoil to add thickness throughout the entire body.
+                                    this process saves the valuable clay and provides a structure to work off of.
                                 </p>
 
                                 <p>
-                                    You can also explain any problems you ran
-                                    into and how the design changed throughout
-                                    the sculpting process.
+                                    Afterwards, clay is used to cover the entire model and the sculpting begins.
+                                    the clay medium I used is Sculpy Super, a polymer clay that requires baking to harden.
+                                    with this model i had to bake several parts individually multiple times, then finally attaching and bakign the entire model.
                                 </p>
 
                             </div>
@@ -255,16 +260,14 @@ function ClayDragonProject({ goBack }) {
                         <div className="final-description">
 
                             <p>
-                                The clay dragon model is one of my most
-                                ambitious physical projects. This section
-                                can describe the final dimensions, materials,
-                                painting process, and overall construction.
+                                The painting process for this model was very quick, taking approximatly 4hours in one sitting.
+                                however, thinkign of the colour pallete wasnt. in the end i made a gamble and chose this.
                             </p>
 
                             <p>
-                                You can also explain what you learned from
-                                completing the project and what you would
-                                change if you built it again.
+                                The clay dragon model is one of my most
+                                ambitious physical projects, and i'm extremely happy with how it came out. 
+                                for the next steps, im considering in makign it into a diorama, a little knight against the world's deadliest dragon
                             </p>
 
                         </div>

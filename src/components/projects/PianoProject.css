@@ -134,8 +134,7 @@
 
 .piano-intro img {
     width: 100%;
-
-    object-fit: cover;
+    height: auto;
 }
 
 .piano-intro-text {
@@ -179,32 +178,61 @@
 .piano-process-top {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.9fr 1fr;
+    grid-template-rows: auto auto;
 
-    gap: 10vw;
+    column-gap: 5vw;
+    row-gap: 3vw;
 
     padding: 0 6vw;
+
+    align-items: start;
 }
 
-.piano-process-top img {
+.piano-process-top .left-piano {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
     width: 100%;
-    height: 35vw;
-
-    max-height: 600px;
-
-    object-fit: cover;
+    height: auto;
 }
 
+.piano-process-top .right-piano {
+    grid-column: 2;
+    grid-row: 1;
 
-/* ============================================================
-   PROCESS TEXT
-============================================================ */
+    width: 100%;
+    height: auto;
+}
+
+.piano-process-top p {
+    grid-column: 2;
+    grid-row: 2;
+
+    width: 100%;
+
+    margin: 0;
+    padding-left: 1.5rem;
+
+    box-sizing: border-box;
+
+    color: #aaaaaa;
+
+    font-size: clamp(0.7rem, 0.9vw, 1rem);
+    line-height: 1.8;   
+}
+
+.piano-process-top .piano-process-text {
+    width: 100%;
+}
 
 .piano-process-text {
-    width: 45%;
+    width: 100%;
+
+    justify-self: start;
 
     margin-top: 3vw;
-    margin-left: 6vw;
+    margin-right: 10vw;
 
     padding-left: 1.5rem;
 
@@ -257,19 +285,12 @@
 
 .piano-small-images img {
     width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
+    height: auto;
 }
 
 .piano-process-large {
     width: 100%;
-    height: 32vw;
-
-    max-height: 550px;
-
-    object-fit: cover;
+    height: auto;
 }
 
 
@@ -298,11 +319,7 @@
 
 .piano-gallery-top img {
     width: 100%;
-    height: 36vw;
-
-    max-height: 600px;
-
-    object-fit: cover;
+    height: auto;
 }
 
 
@@ -312,7 +329,9 @@
 
 .piano-showcase {
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 2vw;
 
     width: 100%;
@@ -326,6 +345,7 @@
 .piano-showcase-left {
     display: flex;
     flex-direction: column;
+
     gap: 5vw;
 }
 
@@ -335,6 +355,7 @@
 .piano-showcase-middle {
     display: flex;
     flex-direction: column;
+
     gap: 5vw;
 }
 
@@ -344,6 +365,7 @@
 .piano-showcase-right {
     display: flex;
     flex-direction: column;
+
     gap: 5vw;
 }
 
@@ -358,6 +380,7 @@
 
 .piano-showcase-text p {
     font-size: clamp(0.7rem, 0.9vw, 1rem);
+
     line-height: 1.8;
 }
 
@@ -370,6 +393,7 @@
     width: 100%;
     height: auto;
 }
+
 
 /* ============================================================
    BOTTOM TWO
@@ -389,11 +413,7 @@
 
 .piano-gallery-bottom img {
     width: 100%;
-    height: 32vw;
-
-    max-height: 550px;
-
-    object-fit: cover;
+    height: auto;
 }
 
 
@@ -407,15 +427,24 @@
         padding-inline: 15px;
     }
 
+
+    /* HERO */
+
     .piano-hero {
         height: 55vw;
     }
+
+
+    /* INTRO */
 
     .piano-intro {
         grid-template-columns: 1fr;
 
         padding: 4rem 1rem;
     }
+
+
+    /* PROCESS TOP */
 
     .piano-process-top {
         grid-template-columns: 1fr;
@@ -425,9 +454,8 @@
         padding: 0 1rem;
     }
 
-    .piano-process-top img {
-        height: auto;
-    }
+
+    /* PROCESS TEXT */
 
     .piano-process-text {
         width: auto;
@@ -435,23 +463,25 @@
         margin: 2rem 1rem;
     }
 
+
+    /* PROCESS BOTTOM */
+
     .piano-process-bottom {
         grid-template-columns: 1fr;
+
+        gap: 1rem;
 
         padding: 0 1rem;
     }
 
-    .piano-process-large {
-        height: auto;
-    }
+
+    /* GALLERY */
 
     .piano-gallery {
         padding: 3rem 1rem;
     }
 
     .piano-gallery-top,
-    .piano-gallery-middle,
-    .piano-gallery-row,
     .piano-gallery-bottom {
         grid-template-columns: 1fr;
 
@@ -460,10 +490,18 @@
         gap: 1rem;
     }
 
-    .piano-gallery-top img,
-    .piano-gallery-tall,
-    .piano-gallery-row img,
-    .piano-gallery-bottom img {
-        height: auto;
+
+    /* SHOWCASE */
+
+    .piano-showcase {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .piano-showcase-left,
+    .piano-showcase-middle,
+    .piano-showcase-right {
+        gap: 2rem;
     }
 }

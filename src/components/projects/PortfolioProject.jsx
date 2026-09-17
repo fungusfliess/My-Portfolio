@@ -130,12 +130,11 @@ function PortfolioProject({ goBack }) {
 
                         <div className="portfolio-description">
                             <p>
-                                The clay dragon model is one of my most proud works,
-                                measuring in at 38cm in length and 30cm in width.
-                                This project took an extremely long time, coming in
-                                at about 3 years. However the amount of time actually
-                                spent working on this project was probably around
-                                20 hours.
+                                This protfolio website is the very first website i've ever made and was an extremely abitious project.
+                                it's made using REACT, and all designs are completely deisnged by myself.
+                                these images here are all the different versions of my websites hero page all the way to what i finalyl decided on.
+                                making this was extremely fun and taught me so so much.
+                                I really like how i can showcase all my little hidden hobbies here and talk about my process of making these.
                             </p>
                         </div>
 

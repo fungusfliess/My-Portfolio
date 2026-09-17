@@ -61,12 +61,10 @@ function ChainedDragonProject({ goBack }) {
 
                         <div className="chained-description">
                             <p>
-                                The clay dragon model is one of my most proud
-                                works, measuring in at 30cm in length and 59cm
-                                in width. This project took extremely long time,
-                                coming in at about 3 years. However the amount
-                                of time actually spent working on this project
-                                was probably around 20 hours.
+                                The chained dragon model was a school assignment from 9th grade. 
+                                we were tasked with making a cube with no glue.
+                                i decided to go super creative and made this dragon model, with the chains acting like the edges of the cube
+                                my substitute to the glue was clay 
                             </p>
                         </div>
 

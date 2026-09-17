@@ -4,6 +4,7 @@ function ProjectFooter({ goBack }) {
     return (
         <>
             <footer className="project-footer">
+                <p> any commments on my work? email me at jerry.ning1025!</p>
 
                 <button onClick={goBack}>
                     ABOUT ME
@@ -18,7 +19,7 @@ function ProjectFooter({ goBack }) {
                 </button>
 
             </footer>
-
+        
             <div className="copyright"> 
                 <p>
                     © JERRY NING
