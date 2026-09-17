@@ -130,11 +130,10 @@ function PortfolioProject({ goBack }) {
 
                         <div className="portfolio-description">
                             <p>
-                                This protfolio website is the very first website i've ever made and was an extremely abitious project.
-                                it's made using REACT, and all designs are completely deisnged by myself.
-                                these images here are all the different versions of my websites hero page all the way to what i finalyl decided on.
-                                making this was extremely fun and taught me so so much.
-                                I really like how i can showcase all my little hidden hobbies here and talk about my process of making these.
+                                This portfolio is the first website I’ve ever built, and it quickly became one of my most ambitious projects.
+                                It was built with React, and every visual direction shown here was designed by me.
+                                These images document the different versions of the home-page hero, from the earliest concepts to the final design.
+                                Building the site taught me a huge amount, and I especially enjoyed creating a place where I can showcase my smaller hobbies and explain the process behind each project.
                             </p>
                         </div>
 

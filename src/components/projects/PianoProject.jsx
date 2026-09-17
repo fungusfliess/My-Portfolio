@@ -69,15 +69,15 @@ function PianoProject({ goBack }) {
                     <div className="piano-intro-text">
 
                         <p>
-                            The Clay piano was one of my most complex model, having several moving parts, and super tiny details.
-                            this project was actually a wedding gift for my piano teacher.
-                            This project start in march 2025, and finished in june 2025. 
-                            like most my projects, i took several long breaks in between, usualyl because i was busy with school.
+                            The clay piano was one of my most complex models, with several moving parts and extremely small details.
+                            I originally made it as a wedding gift for my piano teacher.
+                            The project began in March 2025 and was completed in June 2025.
+                            Like many of my projects, I took several long breaks in between, usually because I was busy with school.
 
                         </p>
 
                         <p>
-                            This piano model 
+                            Miniature Grand Piano
                         </p>
 
                     </div>
@@ -110,8 +110,8 @@ function PianoProject({ goBack }) {
 
                         <div className="piano-process-text">
                             <p>
-                                 the most complicated part of this model was figureing how to attach the fall board, and top lid and get the top lid to fold.
-                                the fall board was very difficult to get the perfect fit, requireing hours sanding, readding clay and cooking to get the perfect fit.
+                                 The most complicated part of this model was figuring out how to attach the fallboard and top lid while still allowing both to move.
+                                Getting the fallboard to fit properly required hours of sanding, adding clay back, rebaking, and repeatedly adjusting the shape.
                             </p>
 
                         </div>
@@ -125,20 +125,15 @@ function PianoProject({ goBack }) {
 
                             <p>
                                
-                                after the fal board was shaped, tiny holes had to be made in the piano and in the fallboard itself.
-                                Using a small toothpick piece at each side to serve as the axis.
-                                the holes had to be perfectly aligned in order for the fallboard to properly open.
-                                additionally, glueing on the toothpicks was a very careful job, as it could end up glueing to the piano and no longer able to open.
+                                After shaping the fallboard, I made tiny holes in both the piano and the fallboard itself.
+                                Small pieces of toothpick on each side acted as the pivot points.
+                                The holes had to align precisely for the fallboard to open smoothly, and gluing the pivots required extra care so the moving parts would not become stuck.
 
                             </p>
                             <p>
-                                another extremely difficult task was contructing the piano lid. the lid has 2 hinges, one to fold the front lid over, and another to move the entire lid.
-                                the front lid hindge was impossible with hindges because of its scale.
-                                theres no commercial hindes that small.
-                                as a solution I used tape to tape both pieces together. 
-                                i then used a clear plastic sheet to cover the tape.
-                                then i bended the pieces back and forth several times, creating a bendable seam.
-                                this proved to be extremely sucessfull, leaving nearly no markings and very smooth fold.
+                                Another difficult task was constructing the piano lid. It needed two hinges: one for the front section to fold over and another for the entire lid to open.
+                                At this scale, a conventional hinge was too large, so I joined the pieces with tape and covered it with a clear plastic sheet.
+                                I then worked the joint back and forth to create a flexible seam. The result was surprisingly clean, with very little visible marking and a smooth fold.
                             </p>
 
                         </div>
@@ -194,12 +189,10 @@ function PianoProject({ goBack }) {
                         <div className="piano-showcase-left">
                             <div className="piano-showcase-text">
                                 <p>
-                                    The final project came out very sucessfull. I was almost able to incorperate all the realism that I wanted to.
-                                    the final project has just short of 88 keys, slightly less than a typical piano. 
-                                    however, the ratio of the keys to the piano is calculated and is actually almost identical to a real piano.
-                                    this model also features all the moving components, including a openable fallboard, lid, lid-stand, and a removeable music stand.
-                                    the interior is also almost 1:1 to a full sides grand piano.
-                                    equiped with tuning knobs, strings and of course the red felts.
+                                    The final model came out very close to what I had imagined, and I was able to incorporate most of the realism I wanted.
+                                    It has just under 88 keys, slightly fewer than a full-size piano, but the key-to-body proportions were calculated to closely match a real instrument.
+                                    The model also includes moving components such as an opening fallboard, lid, lid stand, and removable music stand.
+                                    Inside, I recreated details from a full-size grand piano, including tuning pins, strings, and the red felt.
                                 </p>
                             </div>
 

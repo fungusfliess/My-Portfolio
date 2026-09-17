@@ -61,10 +61,9 @@ function ChainedDragonProject({ goBack }) {
 
                         <div className="chained-description">
                             <p>
-                                The chained dragon model was a school assignment from 9th grade. 
-                                we were tasked with making a cube with no glue.
-                                i decided to go super creative and made this dragon model, with the chains acting like the edges of the cube
-                                my substitute to the glue was clay 
+                                The chained dragon began as a Grade 9 school assignment: create a cube without using glue.
+                                I decided to take the prompt in a more creative direction and built a dragon sculpture, using the chains to represent the edges of the cube.
+                                Instead of glue, I used clay to hold the structure together.
                             </p>
                         </div>
 

@@ -81,22 +81,20 @@ function ClayDragonProject({ goBack }) {
                         <div className="intro-text">
 
                             <p>
-                                the clay dragon model is one of my most proud works, measuring in at 30cm in lenght and 50 in width. 
-                                THis project took a extremely long time, coming in at about 3 years. 
-                                however the amount of time actualyl spent working on this project was probably around 20 hours. 
-                                i tooka very long break before decidign to paint this piece. 
-                                the modeling was the most time consuimgn. 
-                                the painting took a total of 4 hours.
+                                The clay dragon model is one of the works I’m most proud of, measuring 30 cm in length and 50 cm in width.
+                                The project spanned about three years, although the actual time I spent working on it was closer to 20 hours.
+                                I took a long break before eventually returning to paint the piece.
+                                The modelling was the most time-consuming stage, while the painting took about four hours in total.
                             </p>
 
                             <p>
-                                50x30cm
+                                50 × 30 cm
                             </p>
                             <p>
-                                unamed dragon model
+                                Unnamed Dragon Model
                             </p>
                             <p>
-                                medium: Clay
+                                Medium: Clay
                             </p>
 
                         </div>
@@ -177,15 +175,15 @@ function ClayDragonProject({ goBack }) {
                             <div className="process-text">
 
                                 <p>
-                                    The Dragon is first made withg a skeleton model, a aluminium wire that runs through the entire model.
-                                    this skeleton is then covered in tinfoil to add thickness throughout the entire body.
-                                    this process saves the valuable clay and provides a structure to work off of.
+                                    The dragon began with an aluminium-wire skeleton running through the entire model.
+                                    I then covered the skeleton with tinfoil to build out the body’s volume.
+                                    This reduced the amount of clay needed while providing a solid structure to sculpt on top of.
                                 </p>
 
                                 <p>
-                                    Afterwards, clay is used to cover the entire model and the sculpting begins.
-                                    the clay medium I used is Sculpy Super, a polymer clay that requires baking to harden.
-                                    with this model i had to bake several parts individually multiple times, then finally attaching and bakign the entire model.
+                                    Afterward, I covered the structure in clay and began sculpting the final forms.
+                                    I used Sculpey Super, a polymer clay that hardens when baked.
+                                    Several parts had to be baked individually before I could attach them and bake the complete model.
                                 </p>
 
                             </div>
@@ -260,14 +258,13 @@ function ClayDragonProject({ goBack }) {
                         <div className="final-description">
 
                             <p>
-                                The painting process for this model was very quick, taking approximatly 4hours in one sitting.
-                                however, thinkign of the colour pallete wasnt. in the end i made a gamble and chose this.
+                                The painting process itself was fairly quick, taking approximately four hours in one sitting.
+                                Choosing the colour palette took much longer, but in the end I took a chance on this combination.
                             </p>
 
                             <p>
-                                The clay dragon model is one of my most
-                                ambitious physical projects, and i'm extremely happy with how it came out. 
-                                for the next steps, im considering in makign it into a diorama, a little knight against the world's deadliest dragon
+                                The clay dragon is one of my most ambitious physical projects, and I’m extremely happy with how it turned out.
+                                As a possible next step, I’m considering turning it into a diorama: a small knight facing the world’s deadliest dragon.
                             </p>
 
                         </div>

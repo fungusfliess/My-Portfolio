@@ -363,3 +363,5 @@
         margin-top: 3rem;
     }
 }
+/* Text polish */
+.roblox-description p { max-width: 65ch; }

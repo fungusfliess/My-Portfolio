@@ -194,3 +194,5 @@
         gap: 2rem;
     }
 }
+/* Text polish */
+.chained-description p { max-width: 65ch; }

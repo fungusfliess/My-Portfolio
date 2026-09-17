@@ -70,11 +70,10 @@ function RobloxProject({ goBack }) {
 
                     <div className="roblox-description roblox-boat-description">
                         <p>
-                            As a roblox developer for many years, this was my most ambitious project.
-                            this started as an escape route for a game me and my friends were working on but eventually failed.
-                            as a last resort with only a month left of summer break, we pivoted to making a newer and supposedly simplier game.
-                            the idea at first was simple, we were going to make a rougue like endless boat game. 
-                            players would sail endlessly across and infinite ocean and encounter procedurally generated islands.
+                            After years of developing on Roblox, this became my most ambitious game project.
+                            It began as a backup idea after a different game my friends and I were building fell through.
+                            With only about a month of summer left, we pivoted to what we thought would be a simpler concept: a roguelike endless-boating game.
+                            Players would sail across an infinite ocean and encounter procedurally generated islands along the way.
                         </p>
                     </div>
 
@@ -114,21 +113,10 @@ function RobloxProject({ goBack }) {
 
                     <div className="roblox-description roblox-monster-description">
                         <p>
-                            As we made progress we began to relize that the game wasnt as fun as we anticipated.
-                            as a solution, we added more and more features to try and make the game more enjoyable.
-                            however, the more features we added, the further the end seemed and eventually we gave up.
-                            But, I didnt. after taking a break and focusing on school, I came back to the game with even more ambition.
-                            Getting the team back proved difficult, but there was no way i alone, an 3d modler could carry the entire project.
-                            after much struggle, we were able to push out a couple more updates till eventually progress slowed to a halt, again.
-                            however this time, I didnt stop, i decided to take matters into my own hands and contined to progress.
-                            i learned UI design, blender 3d animations, programming. 
-                            But i'm not a super human, this transition took no even half a year. I had to use soemthing else for help.
-                            for the pogramming I used Chatgpt to accelerate the process. 
-                            as an exprienreced programmer, but new to LUA, this was a learning experience.
-                            I looked through the AIs code, relenetlsy tested it and tried my best to try and understand the logic behind it all.
-                            But finally, my time had other places to be. 
-                            now this game is at a state where most functions are complete and just require slight polishing.
-                            i hope to return this project someday and im very proud of the work I was able to achieve.
+                            As development continued, we realized the game wasn’t as fun as we had expected. We kept adding features to make it more engaging, but each addition pushed the finish line further away, and eventually the team stepped away from the project.
+                            After taking a break to focus on school, I returned with even more ambition. Reassembling the team was difficult, and as a 3D modeller I knew I couldn’t carry every part of the project alone. We managed to release a few more updates before progress slowed again.
+                            This time, I kept going independently. I taught myself UI design, Blender animation, and more programming so I could continue building the game. Because I already had programming experience but was new to Lua, I also used ChatGPT to accelerate parts of the development process while I learned. I reviewed the generated code, tested it repeatedly, and worked to understand the logic behind it rather than simply dropping it into the project.
+                            Eventually, other priorities took over. The game is now at a point where most of its major systems are complete and mainly need polishing. I hope to return to it someday, and I’m proud of how much I learned by pushing the project as far as I did.
                         </p>
                     </div>
 
