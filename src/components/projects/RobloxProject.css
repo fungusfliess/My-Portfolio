@@ -365,3 +365,8 @@
 }
 /* Text polish */
 .roblox-description p { max-width: 65ch; }
+
+/* LIGHT MODE */
+.roblox-project.light-mode { background-color: #acacac; color: black; }
+.roblox-project.light-mode .roblox-description p { color: #333; }
+.roblox-project.light-mode .roblox-back-button { color: black; border-color: rgba(0,0,0,0.4); }

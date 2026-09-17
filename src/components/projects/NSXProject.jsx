@@ -1,4 +1,6 @@
 import "./NSXProject.css";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
 
 import heroImage from "./CarImages/Group 26.png";
 import threeViews from "./CarImages/Group 27.png";
@@ -15,9 +17,12 @@ import acar6 from "./CarImages/ACAR6 1.png";
 import acar32 from "./CarImages/ACAR32 1.png";
 
 
-function NSXProject({ goBack }) {
+function NSXProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
     return (
-        <section className="nsx-project">
+        <section className={darkMode ? "nsx-project dark-mode" : "nsx-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
             <button
                 className="nsx-back-button"
@@ -29,7 +34,7 @@ function NSXProject({ goBack }) {
 
             {/* HERO */}
 
-            <div className="nsx-hero">
+            <div className="nsx-hero reveal">
 
                 <img
                     src={heroImage}
@@ -45,7 +50,7 @@ function NSXProject({ goBack }) {
 
             <div className="nsx-content">
 
-                <div className="nsx-gallery">
+                <div className="nsx-gallery reveal">
 
 
                     {/* THREE VIEW IMAGE */}
@@ -96,7 +101,7 @@ function NSXProject({ goBack }) {
 
                     {/* BOTTOM GALLERY */}
 
-                    <div className="nsx-bottom-gallery">
+                    <div className="nsx-bottom-gallery reveal">
 
                         <img
                             className="nsx-top-wire"

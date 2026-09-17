@@ -1,6 +1,5 @@
 .projects-section {
     width: 100%;
-;
     min-height: 100vh;
 
     padding: 8vw;
@@ -34,4 +33,26 @@
     max-width: 1500px;
 
     margin: 6rem auto 0;
+}
+/* ============================================================
+   PROJECTS THEME + MOTION
+============================================================ */
+.projects-section {
+    background-color: #111111;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projects-section.light-mode {
+    background-color: #acacac;
+    color: black;
+}
+
+.projects-section.light-mode::before {
+    background: linear-gradient(to top, #acacac, transparent 20%),
+                linear-gradient(to bottom, #acacac, transparent 20%);
+}
+
+.projects-section.light-mode .projects-title {
+    color: black;
 }

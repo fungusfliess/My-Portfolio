@@ -1,25 +1,32 @@
 import "./Contact.css";
+import useRevealAnimation from "../hooks/useRevealAnimation.js";
 
 function Contact() {
-    return (
-        <section className="contact-section">
-            <p className="section-label">CONTACT</p>
+    const scope = useRevealAnimation();
 
-            <h2 className="contact-title">
+    return (
+        <section className="contact-section" ref={scope}>
+            <p className="section-label reveal">CONTACT</p>
+
+            <h2 className="contact-title reveal">
                 LET'S BUILD SOMETHING.
             </h2>
 
-            <div className="contact-links">
-                <a href="mailto:your@email.com">
+            <div className="contact-links reveal">
+                <a href="mailto:jerry.ning1025@gmail.com">
                     EMAIL
                 </a>
 
-                <a href="https://github.com/yourusername" target="_blank">
+                <a href="https://github.com/fungusfliess" target="_blank">
                     GITHUB
                 </a>
 
-                <a href="https://linkedin.com/in/yourusername" target="_blank">
-                    LINKEDIN
+                <a
+                    className="coming-soon-link"
+                    onClick={(event) => event.preventDefault()}
+                >
+                    LinkedIn
+                    <span className="coming-soon-tooltip">COMING SOON</span>
                 </a>
             </div>
         </section>

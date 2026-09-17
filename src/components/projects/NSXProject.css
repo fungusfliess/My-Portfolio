@@ -274,3 +274,10 @@
         padding-left: 1rem;
     }
 }
+/* Text polish */
+.nsx-description p { max-width: 65ch; }
+
+/* LIGHT MODE */
+.nsx-project.light-mode { background-color: #acacac; color: black; }
+.nsx-project.light-mode .nsx-description p { color: #333; }
+.nsx-project.light-mode .nsx-back-button { color: black; border-color: rgba(0,0,0,0.4); }

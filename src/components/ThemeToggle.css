@@ -1,0 +1,22 @@
+.theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+
+    padding: 10px 16px;
+
+    background: rgba(17, 17, 17, 0.35);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+
+    font-family: "Julius Sans One Custom", sans-serif;
+    cursor: pointer;
+}
+
+.light-mode .theme-toggle {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    border-color: rgba(0, 0, 0, 0.35);
+}

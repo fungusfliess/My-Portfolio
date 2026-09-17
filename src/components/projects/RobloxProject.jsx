@@ -1,4 +1,6 @@
 import "./RobloxProject.css";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
 
 import heroImage from "./RobloxImages/Group 25.png";
 
@@ -21,9 +23,12 @@ import image846 from "./RobloxImages/Screenshot 2026-09-15 204846 1.png";
 import image831 from "./RobloxImages/Screenshot 2026-09-15 205208 1.png";
 
 
-function RobloxProject({ goBack }) {
+function RobloxProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
     return (
-        <section className="roblox-project">
+        <section className={darkMode ? "roblox-project dark-mode" : "roblox-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
             <button
                 className="roblox-back-button"
@@ -35,7 +40,7 @@ function RobloxProject({ goBack }) {
 
             {/* HERO */}
 
-            <div className="roblox-hero">
+            <div className="roblox-hero reveal">
 
                 <img
                     src={heroImage}
@@ -54,7 +59,7 @@ function RobloxProject({ goBack }) {
                     BOAT DEVELOPMENT
                 ================================================== */}
 
-                <div className="roblox-boat-section">
+                <div className="roblox-boat-section reveal">
 
                     <img
                         className="roblox-boat-1"
@@ -96,7 +101,7 @@ function RobloxProject({ goBack }) {
                     ENVIRONMENT
                 ================================================== */}
 
-                <div className="roblox-environment">
+                <div className="roblox-environment reveal">
 
                     <img src={image5253} alt="" />
 
@@ -109,7 +114,7 @@ function RobloxProject({ goBack }) {
                     MONSTER DEVELOPMENT
                 ================================================== */}
 
-                <div className="roblox-monster-section">
+                <div className="roblox-monster-section reveal">
 
                     <div className="roblox-description roblox-monster-description">
                         <p>
@@ -151,7 +156,7 @@ function RobloxProject({ goBack }) {
                     FINAL GAME IMAGES
                 ================================================== */}
 
-                <div className="roblox-final-gallery">
+                <div className="roblox-final-gallery reveal">
 
                     <img
                         className="roblox-final-1"

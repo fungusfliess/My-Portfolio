@@ -1,4 +1,6 @@
 import "./ChainedDragonProject.css";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
 
 import dragon4 from "./ChainDragonImages/ChainedDragon(4) 1.png";
 import dragon2 from "./ChainDragonImages/ChainedDragon(2) 1.png";
@@ -6,9 +8,12 @@ import dragon3 from "./ChainDragonImages/ChainedDragon(3) 1.png";
 import dragon5 from "./ChainDragonImages/ChainedDragon(5) 1.png";
 
 
-function ChainedDragonProject({ goBack }) {
+function ChainedDragonProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
     return (
-        <section className="chained-project">
+        <section className={darkMode ? "chained-project dark-mode" : "chained-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
             <button
                 className="chained-back-button"
@@ -25,11 +30,11 @@ function ChainedDragonProject({ goBack }) {
 
             <div className="chained-content">
               
-                <div className="chained-gallery">
+                <div className="chained-gallery reveal">
 
                     {/* LEFT SIDE */}
 
-                    <div className="chained-left">
+                    <div className="chained-left reveal">
 
                         <img
                             className="chained-main-image"
@@ -57,7 +62,7 @@ function ChainedDragonProject({ goBack }) {
 
                     {/* RIGHT SIDE */}
 
-                    <div className="chained-right">
+                    <div className="chained-right reveal">
 
                         <div className="chained-description">
                             <p>

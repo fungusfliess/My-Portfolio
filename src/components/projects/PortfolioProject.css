@@ -156,51 +156,34 @@
 
 .portfolio-arrow {
     grid-column: 1 / -1;
-
-    position: relative;
-
     width: 70%;
     height: 5vh;
-
     margin: 0 auto;
 }
 
-.portfolio-arrow .arrow {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    height: 100%;
+.portfolio-arrow svg {
+    display: block;
     width: 100%;
-
-    border-left: 1px dashed #ff5353;
-    border-top: 1px dashed #ff5353;
-}
-.portfolio-arrow .arrow::after {
-    content: "";
-    position: absolute;
-
-    bottom:100%;
-    left: 0;
-
     height: 100%;
-    width: 100%;
-
-    border-right: 1px dashed #ff5353;
+    overflow: visible;
 }
 
-.arrow-head {
-    position: absolute;
+.portfolio-arrow-path,
+.portfolio-arrow-head {
+    fill: none;
+    stroke: #ff5353;
+    stroke-width: 0.6;
+    vector-effect: non-scaling-stroke;
+}
 
-    right: 100%;
-    transform: translateX(50%);
-    bottom: 0%;
+.portfolio-arrow-path {
+    stroke-dasharray: 6 6;
+}
 
-    color: #ff5353;
-
-    font-size: clamp(1rem, 2vw, 2rem);
-} 
+.portfolio-arrow-head {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 
 /* ============================================================
    BOTTOM GALLERY
@@ -306,3 +289,11 @@
         margin: 1rem 0;
     }
 }
+/* Text polish */
+.portfolio-description p { max-width: 65ch; }
+
+/* LIGHT MODE */
+.portfolio-project.light-mode { background-color: #acacac; color: black; }
+.portfolio-project.light-mode .portfolio-description p { color: #333; }
+.portfolio-project.light-mode .portfolio-version span { color: black; }
+.portfolio-project.light-mode .portfolio-back-button { color: black; border-color: rgba(0,0,0,0.4); }

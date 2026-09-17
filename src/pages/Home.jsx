@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar.jsx";
 import About from "../components/About.jsx";
 import Projects from "../components/Projects.jsx";
 import Contact from "../components/Contact.jsx";
+import ThemeToggle from "../components/ThemeToggle.jsx";
 
 import "./Home.css";
 
@@ -30,6 +31,11 @@ function Home({ darkMode, setDarkMode }) {
     return (
         <main className={darkMode ? "home dark-mode" : "home"}>
 
+            <ThemeToggle
+                darkMode={darkMode}
+                setDarkMode={setDarkMode}
+            />
+
             <Hero
                 darkMode={darkMode}
                 setDarkMode={setDarkMode}
@@ -43,13 +49,17 @@ function Home({ darkMode, setDarkMode }) {
             <section className="content-section">
 
                 {activeSection === "about" && <About />}
-                {activeSection === "projects" && <Projects />}
+
+                {activeSection === "projects" && (
+                    <Projects darkMode={darkMode} />
+                )}
+
                 {activeSection === "contact" && <Contact />}
 
+                
+
             </section>
-
-            <ProjectFooter/>
-
+                    <ProjectFooter/>
         </main>
     );
 }

@@ -1,5 +1,6 @@
 import "./PianoProject.css";
-import ProjectFooter from "../ProjectFooter";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
 
 import heroImage from "./PianoImages/Group 24.png";
 
@@ -21,10 +22,13 @@ import process1 from "./PianoImages/20250328_230145 1.png";
 import process3 from "./PianoImages/20250328_234643 1.png";
 
 
-function PianoProject({ goBack }) {
+function PianoProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
 
     return (
-        <section className="piano-project">
+        <section className={darkMode ? "piano-project dark-mode" : "piano-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
             {/* BACK BUTTON */}
 
@@ -38,7 +42,7 @@ function PianoProject({ goBack }) {
 
             {/* HERO */}
 
-            <div className="piano-hero">
+            <div className="piano-hero reveal">
 
                 <img
                     src={heroImage}
@@ -59,7 +63,7 @@ function PianoProject({ goBack }) {
 
                 {/* INTRO */}
 
-                <div className="piano-intro">
+                <div className="piano-intro reveal">
 
                     <img
                         src={image1}
@@ -94,9 +98,9 @@ function PianoProject({ goBack }) {
 
                 {/* PROCESS SECTION */}
 
-                <div className="piano-process">
+                <div className="piano-process reveal">
 
-                    <div className="piano-process-top">
+                    <div className="piano-process-top reveal">
 
                         <img className = "left-piano"
                             src={process1}
@@ -119,7 +123,7 @@ function PianoProject({ goBack }) {
                     </div>
 
 
-                    <div className="piano-process-bottom">
+                    <div className="piano-process-bottom reveal">
 
                         <div className="piano-process-description">
 
@@ -167,9 +171,9 @@ function PianoProject({ goBack }) {
 
                 {/* FINAL GALLERY */}
 
-                <div className="piano-gallery">
+                <div className="piano-gallery reveal">
 
-                    <div className="piano-gallery-top">
+                    <div className="piano-gallery-top reveal">
 
                         <img
                             src={image2}
@@ -184,7 +188,7 @@ function PianoProject({ goBack }) {
                     </div>
 
 
-                    <div className="piano-showcase">
+                    <div className="piano-showcase reveal">
 
                         <div className="piano-showcase-left">
                             <div className="piano-showcase-text">
@@ -214,7 +218,7 @@ function PianoProject({ goBack }) {
                     </div>
 
 
-                    <div className="piano-gallery-bottom">
+                    <div className="piano-gallery-bottom reveal">
 
                         <img
                             src={image10}

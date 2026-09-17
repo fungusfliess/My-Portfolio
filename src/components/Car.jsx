@@ -51,11 +51,9 @@ const CAR_ROUGHNESS = 0.25;
 // WIREFRAME
 // ============================================================
 
-// Wireframe inside highlight in LIGHT MODE
 const LIGHT_WIREFRAME_COLOR = "#333232";
 const LIGHT_WIREFRAME_OPACITY = 0.75;
 
-// Wireframe inside highlight in DARK MODE
 const DARK_WIREFRAME_COLOR = "#000000";
 const DARK_WIREFRAME_OPACITY = 0.75;
 
@@ -79,6 +77,32 @@ const ENABLE_MOUSE_ROTATION = true;
 
 const MOUSE_ROTATION_AMOUNT = 8;
 const MOUSE_SMOOTHNESS = 0.04;
+
+
+// ============================================================
+// IDLE MOVEMENT
+// ============================================================
+
+// How many degrees the car travels during each idle sweep
+const IDLE_SWEEP_ANGLE = 10;
+
+// Maximum idle rotational speed
+const IDLE_SPEED = 0.02;
+
+// Wait after mouse stops before idle begins
+const IDLE_WAIT = 1000;
+
+// ACTUAL pause at each end
+const IDLE_END_PAUSE = 0.5;
+
+// Begin slowing down this many degrees before endpoint
+const IDLE_EASE_DISTANCE = 1;
+
+// How smoothly the car accelerates/decelerates
+const IDLE_ACCELERATION = 0.04;
+
+// How close we need to be to count as reaching the end
+const IDLE_END_THRESHOLD = 0.03;
 
 
 // ============================================================
@@ -106,7 +130,6 @@ function Car({ darkMode }) {
 
     const containerRef = useRef(null);
 
-    // Lets the animation loop always know the current mode
     const darkModeRef = useRef(darkMode);
 
     const carRef = useRef(null);
@@ -115,7 +138,7 @@ function Car({ darkMode }) {
 
 
     // ============================================================
-    // UPDATE MATERIALS WHEN DARK MODE CHANGES
+    // UPDATE DARK / LIGHT MODE
     // ============================================================
 
     useEffect(function () {
@@ -124,7 +147,7 @@ function Car({ darkMode }) {
 
 
         // ========================================================
-        // SOLID CAR COLOR
+        // SOLID CAR
         // ========================================================
 
         const car = carRef.current;
@@ -136,6 +159,7 @@ function Car({ darkMode }) {
                 if (!object.isMesh) {
                     return;
                 }
+
 
                 if (darkMode) {
 
@@ -157,11 +181,12 @@ function Car({ darkMode }) {
 
 
         // ========================================================
-        // WIREFRAME COLOR
+        // WIREFRAME CAR
         // ========================================================
 
         const wireframeCar =
             wireframeCarRef.current;
+
 
         if (wireframeCar) {
 
@@ -170,6 +195,7 @@ function Car({ darkMode }) {
                 if (!object.isMesh) {
                     return;
                 }
+
 
                 if (darkMode) {
 
@@ -197,25 +223,19 @@ function Car({ darkMode }) {
 
 
         // ========================================================
-        // LIGHT BEAM OPACITY
+        // LIGHT BEAM
         // ========================================================
 
         const beamMaterial =
             beamMaterialRef.current;
 
+
         if (beamMaterial) {
 
-            if (darkMode) {
-
-                beamMaterial.opacity =
-                    DARK_BEAM_OPACITY;
-
-            } else {
-
-                beamMaterial.opacity =
-                    LIGHT_BEAM_OPACITY;
-
-            }
+            beamMaterial.opacity =
+                darkMode
+                    ? DARK_BEAM_OPACITY
+                    : LIGHT_BEAM_OPACITY;
 
         }
 
@@ -231,39 +251,46 @@ function Car({ darkMode }) {
         const container =
             containerRef.current;
 
+
         const highlightElement =
-            document.querySelector(".highlight");
+            document.querySelector(
+                ".highlight"
+            );
 
 
-        // ============================================================
+        // ========================================================
         // SCENE
-        // ============================================================
+        // ========================================================
 
         const scene =
             new THREE.Scene();
 
 
-        // ============================================================
+        // ========================================================
         // CAMERA
-        // ============================================================
+        // ========================================================
 
         const camera =
             new THREE.PerspectiveCamera(
                 35,
-                window.innerWidth / window.innerHeight,
+                window.innerWidth /
+                    window.innerHeight,
                 0.1,
                 1000
             );
 
+
         camera.setFocalLength(
             CAMERA_FOCAL_LENGTH
         );
+
 
         camera.position.set(
             CAMERA_X,
             CAMERA_Y,
             CAMERA_Z
         );
+
 
         camera.lookAt(
             CAMERA_LOOK_X,
@@ -272,9 +299,9 @@ function Car({ darkMode }) {
         );
 
 
-        // ============================================================
+        // ========================================================
         // GRID
-        // ============================================================
+        // ========================================================
 
         const grid =
             new THREE.GridHelper(
@@ -284,23 +311,34 @@ function Car({ darkMode }) {
                 0x555555
             );
 
-        grid.position.y = -0.5;
 
-        grid.material.transparent = true;
-        grid.material.opacity = 0.35;
-
-        scene.add(grid);
+        grid.position.y =
+            -0.5;
 
 
-        // ============================================================
+        grid.material.transparent =
+            true;
+
+
+        grid.material.opacity =
+            0.35;
+
+
+        scene.add(
+            grid
+        );
+
+
+        // ========================================================
         // RENDERER
-        // ============================================================
+        // ========================================================
 
         const renderer =
             new THREE.WebGLRenderer({
                 antialias: true,
                 alpha: true
             });
+
 
         renderer.setPixelRatio(
             Math.min(
@@ -309,28 +347,33 @@ function Car({ darkMode }) {
             )
         );
 
+
         renderer.setSize(
             window.innerWidth,
             window.innerHeight
         );
 
+
         renderer.outputColorSpace =
             THREE.SRGBColorSpace;
+
 
         renderer.toneMapping =
             THREE.ACESFilmicToneMapping;
 
+
         renderer.toneMappingExposure =
             1.1;
+
 
         container.appendChild(
             renderer.domElement
         );
 
 
-        // ============================================================
+        // ========================================================
         // LIGHTS
-        // ============================================================
+        // ========================================================
 
 
         // ---------- AMBIENT ----------
@@ -340,6 +383,7 @@ function Car({ darkMode }) {
                 0xffffff,
                 AMBIENT_INTENSITY
             );
+
 
         scene.add(
             ambientLight
@@ -354,11 +398,13 @@ function Car({ darkMode }) {
                 FRONT_LIGHT_INTENSITY
             );
 
+
         frontLight.position.set(
             -4,
             6,
             7
         );
+
 
         scene.add(
             frontLight
@@ -373,11 +419,13 @@ function Car({ darkMode }) {
                 SIDE_LIGHT_INTENSITY
             );
 
+
         sideLight.position.set(
             6,
             3,
             3
         );
+
 
         scene.add(
             sideLight
@@ -392,27 +440,30 @@ function Car({ darkMode }) {
                 BACK_LIGHT_INTENSITY
             );
 
+
         backLight.position.set(
             -3,
             4,
             -6
         );
 
+
         scene.add(
             backLight
         );
 
 
-        // ============================================================
+        // ========================================================
         // VISIBLE LIGHT BEAM
-        // ============================================================
+        // ========================================================
 
         const beamRadius =
             Math.tan(
                 THREE.MathUtils.degToRad(
                     BEAM_ANGLE
                 )
-            ) * BEAM_HEIGHT;
+            ) *
+            BEAM_HEIGHT;
 
 
         const beamGeometry =
@@ -428,9 +479,11 @@ function Car({ darkMode }) {
         const beamMaterial =
             new THREE.MeshBasicMaterial({
 
-                color: BEAM_COLOR,
+                color:
+                    BEAM_COLOR,
 
-                transparent: true,
+                transparent:
+                    true,
 
                 opacity:
                     LIGHT_BEAM_OPACITY,
@@ -438,7 +491,8 @@ function Car({ darkMode }) {
                 side:
                     THREE.DoubleSide,
 
-                depthWrite: false,
+                depthWrite:
+                    false,
 
                 blending:
                     THREE.AdditiveBlending
@@ -459,7 +513,8 @@ function Car({ darkMode }) {
 
         lightBeam.position.set(
             BEAM_X,
-            BEAM_Y - BEAM_HEIGHT / 2,
+            BEAM_Y -
+                BEAM_HEIGHT / 2,
             BEAM_Z
         );
 
@@ -469,12 +524,12 @@ function Car({ darkMode }) {
         );
 
 
-        // ============================================================
+        // ========================================================
         // MATERIALS
-        // ============================================================
+        // ========================================================
 
 
-        // ---------- SOLID MATERIAL ----------
+        // ---------- SOLID ----------
 
         const carMaterial =
             new THREE.MeshStandardMaterial({
@@ -493,7 +548,7 @@ function Car({ darkMode }) {
             });
 
 
-        // ---------- WIREFRAME MATERIAL ----------
+        // ---------- WIREFRAME ----------
 
         const wireframeMaterial =
             new THREE.MeshBasicMaterial({
@@ -501,9 +556,11 @@ function Car({ darkMode }) {
                 color:
                     LIGHT_WIREFRAME_COLOR,
 
-                wireframe: true,
+                wireframe:
+                    true,
 
-                transparent: true,
+                transparent:
+                    true,
 
                 opacity:
                     LIGHT_WIREFRAME_OPACITY
@@ -511,17 +568,21 @@ function Car({ darkMode }) {
             });
 
 
-        // ============================================================
+        // ========================================================
         // CAR VARIABLES
-        // ============================================================
+        // ========================================================
 
-        let car = null;
-        let wireframeCar = null;
+        let car =
+            null;
 
 
-        // ============================================================
+        let wireframeCar =
+            null;
+
+
+        // ========================================================
         // LOAD CAR
-        // ============================================================
+        // ========================================================
 
         const loader =
             new GLTFLoader();
@@ -537,21 +598,25 @@ function Car({ darkMode }) {
                 car =
                     gltf.scene;
 
+
                 carRef.current =
                     car;
+
 
                 scene.add(
                     car
                 );
 
 
-                // ====================================================
+                // =================================================
                 // FIND MODEL SIZE
-                // ====================================================
+                // =================================================
 
                 const box =
                     new THREE.Box3()
-                        .setFromObject(car);
+                        .setFromObject(
+                            car
+                        );
 
 
                 const center =
@@ -566,18 +631,25 @@ function Car({ darkMode }) {
                     );
 
 
-                // ====================================================
+                // =================================================
                 // CENTER MODEL
-                // ====================================================
+                // =================================================
 
-                car.position.x -= center.x;
-                car.position.y -= center.y;
-                car.position.z -= center.z;
+                car.position.x -=
+                    center.x;
 
 
-                // ====================================================
-                // SCALE MODEL
-                // ====================================================
+                car.position.y -=
+                    center.y;
+
+
+                car.position.z -=
+                    center.z;
+
+
+                // =================================================
+                // SCALE
+                // =================================================
 
                 const maxDimension =
                     Math.max(
@@ -597,33 +669,37 @@ function Car({ darkMode }) {
                 );
 
 
-                // ====================================================
-                // POSITION MODEL
-                // ====================================================
+                // =================================================
+                // POSITION
+                // =================================================
 
                 car.position.x +=
                     CAR_POSITION_X;
 
+
                 car.position.y +=
                     CAR_POSITION_Y;
+
 
                 car.position.z +=
                     CAR_POSITION_Z;
 
 
-                // ====================================================
-                // ROTATE MODEL
-                // ====================================================
+                // =================================================
+                // ROTATION
+                // =================================================
 
                 car.rotation.x =
                     THREE.MathUtils.degToRad(
                         CAR_ROTATION_X
                     );
 
+
                 car.rotation.y =
                     THREE.MathUtils.degToRad(
                         CAR_ROTATION_Y
                     );
+
 
                 car.rotation.z =
                     THREE.MathUtils.degToRad(
@@ -631,40 +707,50 @@ function Car({ darkMode }) {
                     );
 
 
-                // ====================================================
-                // APPLY SOLID MATERIAL
-                // ====================================================
+                // =================================================
+                // SOLID MATERIAL
+                // =================================================
 
-                car.traverse(function (object) {
+                car.traverse(
+                    function (object) {
 
-                    if (object.isMesh) {
+                        if (
+                            object.isMesh
+                        ) {
 
-                        object.material =
-                            carMaterial.clone();
+                            object.material =
+                                carMaterial.clone();
+
+                        }
 
                     }
+                );
 
-                });
 
-
-                // ====================================================
-                // CREATE WIREFRAME COPY
-                // ====================================================
+                // =================================================
+                // WIREFRAME COPY
+                // =================================================
 
                 wireframeCar =
-                    car.clone(true);
+                    car.clone(
+                        true
+                    );
 
 
-                wireframeCar.traverse(function (object) {
+                wireframeCar.traverse(
+                    function (object) {
 
-                    if (object.isMesh) {
+                        if (
+                            object.isMesh
+                        ) {
 
-                        object.material =
-                            wireframeMaterial.clone();
+                            object.material =
+                                wireframeMaterial.clone();
+
+                        }
 
                     }
-
-                });
+                );
 
 
                 wireframeCar.visible =
@@ -680,84 +766,93 @@ function Car({ darkMode }) {
                 );
 
 
-                // ====================================================
-                // APPLY CURRENT MODE
-                // ====================================================
+                // =================================================
+                // CURRENT THEME
+                // =================================================
 
-                if (darkModeRef.current) {
+                if (
+                    darkModeRef.current
+                ) {
 
+                    car.traverse(
+                        function (object) {
 
-                    // ---------- SOLID CAR ----------
+                            if (
+                                object.isMesh
+                            ) {
 
-                    car.traverse(function (object) {
+                                object.material.color.set(
+                                    DARK_CAR_COLOR
+                                );
 
-                        if (object.isMesh) {
-
-                            object.material.color.set(
-                                DARK_CAR_COLOR
-                            );
-
-                        }
-
-                    });
-
-
-                    // ---------- WIREFRAME ----------
-
-                    wireframeCar.traverse(function (object) {
-
-                        if (object.isMesh) {
-
-                            object.material.color.set(
-                                DARK_WIREFRAME_COLOR
-                            );
-
-                            object.material.opacity =
-                                DARK_WIREFRAME_OPACITY;
+                            }
 
                         }
+                    );
 
-                    });
+
+                    wireframeCar.traverse(
+                        function (object) {
+
+                            if (
+                                object.isMesh
+                            ) {
+
+                                object.material.color.set(
+                                    DARK_WIREFRAME_COLOR
+                                );
+
+
+                                object.material.opacity =
+                                    DARK_WIREFRAME_OPACITY;
+
+                            }
+
+                        }
+                    );
 
 
                     beamMaterial.opacity =
                         DARK_BEAM_OPACITY;
 
-
                 } else {
 
+                    car.traverse(
+                        function (object) {
 
-                    // ---------- SOLID CAR ----------
+                            if (
+                                object.isMesh
+                            ) {
 
-                    car.traverse(function (object) {
+                                object.material.color.set(
+                                    LIGHT_CAR_COLOR
+                                );
 
-                        if (object.isMesh) {
-
-                            object.material.color.set(
-                                LIGHT_CAR_COLOR
-                            );
-
-                        }
-
-                    });
-
-
-                    // ---------- WIREFRAME ----------
-
-                    wireframeCar.traverse(function (object) {
-
-                        if (object.isMesh) {
-
-                            object.material.color.set(
-                                LIGHT_WIREFRAME_COLOR
-                            );
-
-                            object.material.opacity =
-                                LIGHT_WIREFRAME_OPACITY;
+                            }
 
                         }
+                    );
 
-                    });
+
+                    wireframeCar.traverse(
+                        function (object) {
+
+                            if (
+                                object.isMesh
+                            ) {
+
+                                object.material.color.set(
+                                    LIGHT_WIREFRAME_COLOR
+                                );
+
+
+                                object.material.opacity =
+                                    LIGHT_WIREFRAME_OPACITY;
+
+                            }
+
+                        }
+                    );
 
 
                     beamMaterial.opacity =
@@ -783,21 +878,119 @@ function Car({ darkMode }) {
         );
 
 
-        // ============================================================
-        // MOUSE MOVEMENT
-        // ============================================================
+        // ========================================================
+        // MOUSE + IDLE VARIABLES
+        // ========================================================
 
-        let mouseX = 0;
+        let mouseX =
+            0;
 
 
-        function handleMouseMove(event) {
+        let lastMouseMoveTime =
+            performance.now();
+
+
+        let idleActive =
+            false;
+
+
+        /*
+            1  = rotating right
+            -1 = rotating left
+        */
+
+        let idleDirection =
+            1;
+
+
+        /*
+            Exact angle we're currently
+            travelling toward.
+        */
+
+        let idleTargetRotation =
+            0;
+
+
+        /*
+            "moving"
+            "paused"
+        */
+
+        let idleState =
+            "moving";
+
+
+        /*
+            Timestamp when endpoint
+            pause started.
+        */
+
+        let idlePauseStart =
+            0;
+
+
+        /*
+            Current rotational velocity.
+            Starts at zero so movement
+            can accelerate smoothly.
+        */
+
+        let idleVelocity =
+            0;
+
+
+        /*
+            Used so movement behaves
+            consistently at different FPS.
+        */
+
+        let previousTime =
+            performance.now();
+
+
+        // ========================================================
+        // MOUSE
+        // ========================================================
+
+        function handleMouseMove(
+            event
+        ) {
 
             mouseX =
                 (
                     event.clientX /
                     window.innerWidth
                 )
-                * 2 - 1;
+                *
+                2 -
+                1;
+
+
+            lastMouseMoveTime =
+                performance.now();
+
+
+            /*
+                Immediately cancel idle.
+
+                IMPORTANT:
+                We DON'T change car.rotation.y.
+
+                That means the mouse takes over
+                from exactly wherever the car is.
+            */
+
+            idleActive =
+                false;
+
+
+            idleState =
+                "moving";
+
+
+            idleVelocity =
+                0;
 
         }
 
@@ -808,13 +1001,15 @@ function Car({ darkMode }) {
         );
 
 
-        // ============================================================
-        // GET HIGHLIGHT SCISSOR
-        // ============================================================
+        // ========================================================
+        // HIGHLIGHT SCISSOR
+        // ========================================================
 
         function getHighlightScissor() {
 
-            if (!highlightElement) {
+            if (
+                !highlightElement
+            ) {
 
                 return null;
 
@@ -844,10 +1039,14 @@ function Car({ darkMode }) {
             return {
 
                 x:
-                    Math.round(x),
+                    Math.round(
+                        x
+                    ),
 
                 y:
-                    Math.round(y),
+                    Math.round(
+                        y
+                    ),
 
                 width:
                     Math.round(
@@ -864,9 +1063,9 @@ function Car({ darkMode }) {
         }
 
 
-        // ============================================================
+        // ========================================================
         // ANIMATION
-        // ============================================================
+        // ========================================================
 
         let animationFrameId;
 
@@ -879,9 +1078,32 @@ function Car({ darkMode }) {
                 );
 
 
-            // ========================================================
-            // MOUSE ROTATION
-            // ========================================================
+            const currentTime =
+                performance.now();
+
+
+            // ====================================================
+            // DELTA TIME
+            // ====================================================
+
+            const deltaTime =
+                Math.min(
+                    (
+                        currentTime -
+                        previousTime
+                    ) /
+                    1000,
+                    0.05
+                );
+
+
+            previousTime =
+                currentTime;
+
+
+            // ====================================================
+            // CAR ROTATION
+            // ====================================================
 
             if (car) {
 
@@ -891,9 +1113,39 @@ function Car({ darkMode }) {
                     );
 
 
+                const timeSinceMouseMove =
+                    currentTime -
+                    lastMouseMoveTime;
+
+
+                // =================================================
+                // MOUSE CONTROL
+                // =================================================
+
                 if (
-                    ENABLE_MOUSE_ROTATION
+                    ENABLE_MOUSE_ROTATION &&
+                    timeSinceMouseMove <
+                        IDLE_WAIT
                 ) {
+
+                    /*
+                        Mouse has COMPLETE control.
+
+                        Idle isn't calculated at all
+                        while we're in here.
+                    */
+
+                    idleActive =
+                        false;
+
+
+                    idleState =
+                        "moving";
+
+
+                    idleVelocity =
+                        0;
+
 
                     const mouseRotation =
                         THREE.MathUtils.degToRad(
@@ -918,11 +1170,378 @@ function Car({ darkMode }) {
                 }
 
 
-                // ====================================================
-                // KEEP WIREFRAME MATCHED TO SOLID CAR
-                // ====================================================
+                // =================================================
+                // IDLE CONTROL
+                // =================================================
 
-                if (wireframeCar) {
+                else {
+
+                    // =============================================
+                    // IDLE JUST STARTED
+                    // =============================================
+
+                    if (
+                        !idleActive
+                    ) {
+
+                        idleActive =
+                            true;
+
+
+                        idleState =
+                            "moving";
+
+
+                        idleVelocity =
+                            0;
+
+
+                        /*
+                            VERY IMPORTANT:
+
+                            car.rotation.y is NOT changed here.
+
+                            So if the mouse left the car at:
+
+                                57.8 degrees
+
+                            idle starts at:
+
+                                57.8 degrees
+
+                            No clipping.
+                            No snapping.
+                            No teleport.
+                        */
+
+
+                        /*
+                            Choose which direction to
+                            initially move.
+
+                            If mouse left us to the
+                            right of center, move left.
+
+                            If mouse left us to the
+                            left of center, move right.
+                        */
+
+                        if (
+                            car.rotation.y >=
+                            baseRotation
+                        ) {
+
+                            idleDirection =
+                                -1;
+
+                        } else {
+
+                            idleDirection =
+                                1;
+
+                        }
+
+
+                        /*
+                            The first target is relative
+                            to WHERE WE CURRENTLY ARE.
+
+                            Not relative to the base angle.
+                        */
+
+                        idleTargetRotation =
+                            car.rotation.y +
+                            THREE.MathUtils.degToRad(
+                                IDLE_SWEEP_ANGLE *
+                                idleDirection
+                            );
+
+                    }
+
+
+                    // =============================================
+                    // PAUSED AT END
+                    // =============================================
+
+                    if (
+                        idleState ===
+                        "paused"
+                    ) {
+
+                        /*
+                            DO NOT MODIFY ROTATION.
+
+                            The car literally stays
+                            completely stationary here.
+                        */
+
+
+                        const pauseTime =
+                            currentTime -
+                            idlePauseStart;
+
+
+                        if (
+                            pauseTime >=
+                            IDLE_END_PAUSE
+                        ) {
+
+                            /*
+                                Pause is over.
+
+                                Reverse direction.
+                            */
+
+                            idleDirection *=
+                                -1;
+
+
+                            /*
+                                Start the NEXT sweep from
+                                exactly where we're currently
+                                sitting.
+                            */
+
+                            idleTargetRotation =
+                                car.rotation.y +
+                                THREE.MathUtils.degToRad(
+                                    IDLE_SWEEP_ANGLE *
+                                    idleDirection
+                                );
+
+
+                            /*
+                                Start from zero velocity.
+
+                                This means it smoothly
+                                accelerates away from
+                                the endpoint.
+                            */
+
+                            idleVelocity =
+                                0;
+
+
+                            idleState =
+                                "moving";
+
+                        }
+
+                    }
+
+
+                    // =============================================
+                    // MOVING
+                    // =============================================
+
+                    else if (
+                        idleState ===
+                        "moving"
+                    ) {
+
+                        const distance =
+                            idleTargetRotation -
+                            car.rotation.y;
+
+
+                        const absoluteDistance =
+                            Math.abs(
+                                distance
+                            );
+
+
+                        const threshold =
+                            THREE.MathUtils.degToRad(
+                                IDLE_END_THRESHOLD
+                            );
+
+
+                        // =========================================
+                        // WE REACHED THE END
+                        // =========================================
+
+                        if (
+                            absoluteDistance <=
+                            threshold
+                        ) {
+
+                            /*
+                                Finish the tiny remaining
+                                distance exactly.
+                            */
+
+                            car.rotation.y =
+                                idleTargetRotation;
+
+
+                            idleVelocity =
+                                0;
+
+
+                            /*
+                                ENTER PAUSED STATE.
+                            */
+
+                            idleState =
+                                "paused";
+
+
+                            /*
+                                Start the pause clock NOW.
+                            */
+
+                            idlePauseStart =
+                                currentTime;
+
+                        }
+
+
+                        // =========================================
+                        // STILL MOVING
+                        // =========================================
+
+                        else {
+
+                            const easeDistance =
+                                THREE.MathUtils.degToRad(
+                                    IDLE_EASE_DISTANCE
+                                );
+
+
+                            /*
+                                1 when far from endpoint.
+
+                                Approaches 0 as we get
+                                close to endpoint.
+                            */
+
+                            let speedMultiplier =
+                                THREE.MathUtils.clamp(
+                                    absoluteDistance /
+                                    easeDistance,
+                                    0,
+                                    1
+                                );
+
+
+                            /*
+                                Smoothstep curve.
+
+                                Makes the slowdown less
+                                mechanical.
+                            */
+
+                            speedMultiplier =
+                                speedMultiplier *
+                                speedMultiplier *
+                                (
+                                    3 -
+                                    2 *
+                                    speedMultiplier
+                                );
+
+
+                            const maxSpeed =
+                                THREE.MathUtils.degToRad(
+                                    IDLE_SPEED
+                                );
+
+
+                            /*
+                                Tiny minimum speed prevents
+                                us from asymptotically never
+                                reaching the endpoint.
+                            */
+
+                            const minimumSpeed =
+                                maxSpeed *
+                                0.08;
+
+
+                            const desiredSpeed =
+                                THREE.MathUtils.lerp(
+                                    minimumSpeed,
+                                    maxSpeed,
+                                    speedMultiplier
+                                );
+
+
+                            const desiredVelocity =
+                                desiredSpeed *
+                                Math.sign(
+                                    distance
+                                );
+
+
+                            // =====================================
+                            // SMOOTH ACCELERATION
+                            // =====================================
+
+                            idleVelocity =
+                                THREE.MathUtils.lerp(
+                                    idleVelocity,
+                                    desiredVelocity,
+                                    IDLE_ACCELERATION
+                                );
+
+
+                            // =====================================
+                            // CALCULATE THIS FRAME'S MOVEMENT
+                            // =====================================
+
+                            const movement =
+                                idleVelocity *
+                                deltaTime *
+                                60;
+
+
+                            // =====================================
+                            // PREVENT OVERSHOOT
+                            // =====================================
+
+                            if (
+                                Math.abs(
+                                    movement
+                                ) >=
+                                absoluteDistance
+                            ) {
+
+                                car.rotation.y =
+                                    idleTargetRotation;
+
+
+                                idleVelocity =
+                                    0;
+
+
+                                idleState =
+                                    "paused";
+
+
+                                idlePauseStart =
+                                    currentTime;
+
+                            } else {
+
+                                car.rotation.y +=
+                                    movement;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+
+                // =================================================
+                // WIREFRAME FOLLOWS SOLID CAR
+                // =================================================
+
+                if (
+                    wireframeCar
+                ) {
 
                     wireframeCar.rotation.copy(
                         car.rotation
@@ -933,11 +1552,10 @@ function Car({ darkMode }) {
             }
 
 
-            // ========================================================
+            // ====================================================
             // PASS 1
-            //
-            // SOLID CAR EVERYWHERE
-            // ========================================================
+            // SOLID CAR
+            // ====================================================
 
             if (car) {
 
@@ -947,7 +1565,9 @@ function Car({ darkMode }) {
             }
 
 
-            if (wireframeCar) {
+            if (
+                wireframeCar
+            ) {
 
                 wireframeCar.visible =
                     false;
@@ -966,9 +1586,9 @@ function Car({ darkMode }) {
             );
 
 
-            // ========================================================
-            // WAIT UNTIL EVERYTHING IS READY
-            // ========================================================
+            // ====================================================
+            // WAIT UNTIL EVERYTHING EXISTS
+            // ====================================================
 
             if (
                 !car ||
@@ -981,26 +1601,27 @@ function Car({ darkMode }) {
             }
 
 
-            // ========================================================
-            // FIND HIGHLIGHT RECTANGLE
-            // ========================================================
+            // ====================================================
+            // HIGHLIGHT
+            // ====================================================
 
             const scissor =
                 getHighlightScissor();
 
 
-            if (!scissor) {
+            if (
+                !scissor
+            ) {
 
                 return;
 
             }
 
 
-            // ========================================================
+            // ====================================================
             // PASS 2
-            //
-            // WIREFRAME ONLY INSIDE HIGHLIGHT
-            // ========================================================
+            // WIREFRAME INSIDE HIGHLIGHT
+            // ====================================================
 
             car.visible =
                 false;
@@ -1016,22 +1637,17 @@ function Car({ darkMode }) {
 
 
             renderer.setScissor(
-
                 scissor.x,
                 scissor.y,
                 scissor.width,
                 scissor.height
-
             );
 
 
-            // Don't erase the first render
             renderer.autoClear =
                 false;
 
 
-            // Allows the wireframe to replace the
-            // solid car inside the highlight
             renderer.clearDepth();
 
 
@@ -1041,9 +1657,9 @@ function Car({ darkMode }) {
             );
 
 
-            // ========================================================
+            // ====================================================
             // RESET
-            // ========================================================
+            // ====================================================
 
             renderer.autoClear =
                 true;
@@ -1067,9 +1683,9 @@ function Car({ darkMode }) {
         animate();
 
 
-        // ============================================================
+        // ========================================================
         // RESIZE
-        // ============================================================
+        // ========================================================
 
         function handleResize() {
 
@@ -1095,9 +1711,9 @@ function Car({ darkMode }) {
         );
 
 
-        // ============================================================
+        // ========================================================
         // CLEANUP
-        // ============================================================
+        // ========================================================
 
         return function () {
 
@@ -1119,9 +1735,11 @@ function Car({ darkMode }) {
 
 
             beamGeometry.dispose();
+
             beamMaterial.dispose();
 
             carMaterial.dispose();
+
             wireframeMaterial.dispose();
 
             renderer.dispose();
@@ -1130,8 +1748,10 @@ function Car({ darkMode }) {
             carRef.current =
                 null;
 
+
             wireframeCarRef.current =
                 null;
+
 
             beamMaterialRef.current =
                 null;
@@ -1160,12 +1780,10 @@ function Car({ darkMode }) {
     // ============================================================
 
     return (
-
         <div
             ref={containerRef}
             id="car-container"
         ></div>
-
     );
 
 }

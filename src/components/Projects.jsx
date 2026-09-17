@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
+import useRevealAnimation from "../hooks/useRevealAnimation.js";
 import ProjectCard from "./ProjectCard.jsx";
 import PortfolioProject from "./projects/PortfolioProject.jsx";
 import NSXProject from "./projects/NSXProject.jsx";
@@ -16,47 +17,69 @@ import robloxImage from "./images/bigmonster.png";
 import pianoImage from "./images/miniturePiano (11).jpg";
 
 
+import gsap from "gsap";
 
-function Projects() {
+
+
+function Projects({ darkMode = true, setDarkMode }) {
     const [selectedProject, setSelectedProject] = useState(null);
+    const scope = useRevealAnimation();
 
+    useLayoutEffect(() => {
+        if (selectedProject !== null) return;
+        if (!scope.current) return;
+
+        gsap.fromTo(
+            scope.current,
+            {
+                opacity: 0,
+                y: 20
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out"
+            }
+        );
+    }, [selectedProject]);
+    
     if (selectedProject === "portfolio") {
-        return <PortfolioProject goBack={function () {
+        return <PortfolioProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }
 
     if (selectedProject === "dragon") {
-        return <ClayDragonProject goBack={function () {
+        return <ClayDragonProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }
 
     if (selectedProject === "nsx") {
-        return <NSXProject goBack={function () {
+        return <NSXProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }
     if (selectedProject === "piano") {
-        return <PianoProject goBack={function () {
+        return <PianoProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }
     if (selectedProject === "chainedDragon") {
-        return <ChainedDragonProject goBack={function () {
+        return <ChainedDragonProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }
     if (selectedProject === "robloxProject") {
-        return <RobloxProject goBack={function () {
+        return <RobloxProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
             setSelectedProject(null);
         }} />;
     }    
 
     return (
-        <section className="projects-section">
-            {/* <p className="section-label">SELECTED WORK</p> */}
-            <h1 className="projects-title"> MY PROJECTS</h1>
+        <section className={darkMode ? "projects-section dark-mode" : "projects-section light-mode"} ref={scope}>
+            <h1 className="projects-title reveal"> MY PROJECTS</h1>
 
             <div className="projects-grid">
 

@@ -46,9 +46,24 @@ body {
     overflow-x: hidden;
 }
 
+body {
+     transition:
+        color 0.4s ease,
+        background-color 0.4s ease;
+}
+
 body.dark-mode {
     background-color: rgb(71, 71, 71);
     background-image: url("/images/background-gradient-dark.png");
+}
+
+.projects-section {
+    background-color: #111111;
+    color: white;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 h1 {
@@ -78,4 +93,25 @@ p {
     font-family: "Julius Sans One Custom", sans-serif;
     color: rgb(255, 255, 255);
     font-weight: 400;
+}
+
+body h1,
+body h2,
+body p,
+body span,
+body a{
+    color: black;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode a{
+    color: white;
+}
+
+button {
+    border-color: white;
 }

@@ -1,4 +1,11 @@
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./PortfolioProject.css";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 import heroImage from "./PortfolioImages/Group 28.png";
 
@@ -18,9 +25,46 @@ import image18 from "./PortfolioImages/image 18.png";
 import image19 from "./PortfolioImages/image 19.png";
 
 
-function PortfolioProject({ goBack }) {
+function PortfolioProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
+    const arrowScope = useRef(null);
+
+    useLayoutEffect(function () {
+        if (!arrowScope.current) return;
+
+        const context = gsap.context(function () {
+            const paths = gsap.utils.toArray(".portfolio-arrow-path");
+
+            paths.forEach(function (path) {
+                const length = path.getTotalLength();
+
+                gsap.set(path, {
+                    strokeDasharray: `6 6`,
+                    strokeDashoffset: length
+                });
+
+                gsap.to(path, {
+                    strokeDashoffset: 0,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: path.closest(".portfolio-arrow"),
+                        start: "top 85%",
+                        once: true
+                    }
+                });
+            });
+        }, arrowScope);
+
+        return function () {
+            context.revert();
+        };
+    }, []);
+
     return (
-        <section className="portfolio-project">
+        <section className={darkMode ? "portfolio-project dark-mode" : "portfolio-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
             <button
                 className="portfolio-back-button"
@@ -32,7 +76,7 @@ function PortfolioProject({ goBack }) {
 
             {/* HERO */}
 
-            <div className="portfolio-hero">
+            <div className="portfolio-hero reveal">
 
                 <img
                     src={heroImage}
@@ -46,68 +90,68 @@ function PortfolioProject({ goBack }) {
 
             {/* CONTENT */}
 
-            <div className="portfolio-content">
+            <div className="portfolio-content" ref={arrowScope}>
 
 
                 {/* FIRST GALLERY */}
 
                 <div className="portfolio-top-gallery">
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image6} alt="" />
                         <span>V1</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image7} alt="" />
                         <span>V2</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image9} alt="" />
                         <span>V3</span>
                     </div>
 
                     <div className="portfolio-arrow">
-                        <div className="arrow">
-                            <div className="arrow-head">⌄</div>
-                        </div>
-                        
+                        <svg viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
+                            <path className="portfolio-arrow-path" d="M 100 2 H 4 V 20" />
+                            <polyline className="portfolio-arrow-head" points="1,16 4,20 7,16" />
+                        </svg>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image8} alt="" />
                         <span>V4</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image11} alt="" />
                         <span>V5</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image10} alt="" />
                         <span>V6</span>
                     </div>
 
                     <div className="portfolio-arrow">
-                        <div className="arrow">
-                            <div className="arrow-head">⌄</div>
-                        </div>
-                        
+                        <svg viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
+                            <path className="portfolio-arrow-path" d="M 100 2 H 4 V 20" />
+                            <polyline className="portfolio-arrow-head" points="1,16 4,20 7,16" />
+                        </svg>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image12} alt="" />
                         <span>V7</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image13} alt="" />
                         <span>V8</span>
                     </div>
 
-                    <div className="portfolio-version">
+                    <div className="portfolio-version reveal">
                         <img src={image14} alt="" />
                         <span>V9</span>
                     </div>
@@ -117,7 +161,7 @@ function PortfolioProject({ goBack }) {
 
                 {/* BOTTOM GALLERY */}
 
-                <div className="portfolio-bottom-gallery">
+                <div className="portfolio-bottom-gallery reveal">
 
                     <img src={image15} alt="" />
 

@@ -681,3 +681,15 @@
     }
 
 }
+/* Text polish */
+.intro-text p,
+.process-text p,
+.final-description p { max-width: 65ch; }
+
+/* LIGHT MODE */
+.clay-project.light-mode { background-color: #acacac; color: black; }
+.clay-project.light-mode p { color: #333; }
+.clay-project.light-mode .back-button { color: black; border-color: rgba(0,0,0,0.4); }
+/* Titles placed over project images stay white. */
+.clay-project.light-mode .hero-image h1,
+.clay-project.light-mode .hero-image h2 { color: white; }

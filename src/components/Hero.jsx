@@ -1,5 +1,6 @@
 import "./Hero.css";
 import Car from "./Car.jsx";
+import ProjectFooter from "./ProjectFooter.jsx";
 
 function Hero({ darkMode, setDarkMode }) {
 
@@ -53,11 +54,11 @@ function Hero({ darkMode, setDarkMode }) {
 
             </div>
 
-            <img
-                id="arrow"
-                className="icon"
-                src={`${import.meta.env.BASE_URL}images/Vector 2.png`}
-            />
+            <p className="scroll-text">
+                        LEARN MORE
+                        <br />
+                        ↓
+            </p>
 
             <div className="highlight">
 
@@ -80,16 +81,9 @@ function Hero({ darkMode, setDarkMode }) {
 
             </div>
 
-            <button
-                id="dark-mode-button"
-                onClick={function () {
-                    setDarkMode(!darkMode);
-                }}
-            >
-                DARK MODE
-            </button>
-
         </section>
+
+        
     );
 }
 

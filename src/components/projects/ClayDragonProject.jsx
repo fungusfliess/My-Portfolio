@@ -1,5 +1,6 @@
 import "./ClayDragonProject.css";
-import ProjectFooter from "../ProjectFooter";
+import useRevealAnimation from "../../hooks/useRevealAnimation.js";
+import ThemeToggle from "../ThemeToggle.jsx";
 
 // ============================================================
 // IMAGE IMPORTS — REPLACE THESE PATHS WITH YOUR REAL ONES
@@ -23,11 +24,14 @@ import image4 from "./DragonImages/UnpaintedDragon (2) 1.png";
 import image7 from "./DragonImages/UnpaintedDragon (4) 1.png";
 import image6 from "./DragonImages/UnpaintedDragon (6) 1.png";
 
-function ClayDragonProject({ goBack }) {
+function ClayDragonProject({ goBack, darkMode = true, setDarkMode }) {
+    const scope = useRevealAnimation();
 
     return (
 
-        <section className="clay-project">
+        <section className={darkMode ? "clay-project dark-mode" : "clay-project light-mode"} ref={scope}>
+
+            {setDarkMode && <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />} 
 
 
             {/* ======================================================
@@ -47,7 +51,7 @@ function ClayDragonProject({ goBack }) {
                 PAGE HERO
             ====================================================== */}
 
-            <div className="page-hero">
+            <div className="page-hero reveal">
 
                 <img
                     src={image1}
@@ -66,7 +70,7 @@ function ClayDragonProject({ goBack }) {
                     SECTION 1 — INTRODUCTION
                 ====================================================== */}
 
-                <div className="intro-section">
+                <div className="intro-section reveal">
 
 
                     <div className="intro-content">
@@ -172,7 +176,7 @@ function ClayDragonProject({ goBack }) {
                             </div>
 
 
-                            <div className="process-text">
+                            <div className="process-text reveal">
 
                                 <p>
                                     The dragon began with an aluminium-wire skeleton running through the entire model.
@@ -200,7 +204,7 @@ function ClayDragonProject({ goBack }) {
                     SECTION 3 — FINAL PROJECT
                 ====================================================== */}
 
-                <div className="final-section">
+                <div className="final-section reveal">
 
 
                     {/* ---------- FINAL HERO ---------- */}

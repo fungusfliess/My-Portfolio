@@ -505,3 +505,17 @@
         gap: 2rem;
     }
 }
+/* Text polish */
+.piano-intro-text p,
+.piano-process-text p,
+.piano-process-description p,
+.piano-showcase-text p { max-width: 65ch; }
+
+/* LIGHT MODE */
+.piano-project.light-mode { background-color: #acacac; color: black; }
+.piano-project.light-mode .piano-intro-text,
+.piano-project.light-mode .piano-process-text,
+.piano-project.light-mode .piano-process-description,
+.piano-project.light-mode .piano-showcase-text,
+.piano-project.light-mode .piano-learn-more { color: #333; }
+.piano-project.light-mode .piano-back-button { color: black; border-color: rgba(0,0,0,0.4); }
