@@ -1,6 +1,8 @@
-import { useState, useLayoutEffect } from "react";
+import { useEffect, useState, useLayoutEffect, useRef } from "react";
 import useRevealAnimation from "../hooks/useRevealAnimation.js";
+
 import ProjectCard from "./ProjectCard.jsx";
+
 import PortfolioProject from "./projects/PortfolioProject.jsx";
 import NSXProject from "./projects/NSXProject.jsx";
 import ClayDragonProject from "./projects/ClayDragonProject.jsx";
@@ -9,6 +11,7 @@ import ChainedDragonProject from "./projects/ChainedDragonProject.jsx";
 import RobloxProject from "./projects/RobloxProject.jsx";
 
 import "./Projects.css";
+
 import dragonImage from "./images/Dragon (9).jpg";
 import webImage from "./images/website.png";
 import carImage from "./images/carImage.png";
@@ -16,133 +19,223 @@ import chainedDragonImage from "./images/ChainedDragon(4).jpg";
 import robloxImage from "./images/bigmonster.png";
 import pianoImage from "./images/miniturePiano (11).jpg";
 
-
 import gsap from "gsap";
 
 
+function Projects({ darkMode = true, setDarkMode, goToSection }) {
 
-function Projects({ darkMode = true, setDarkMode }) {
     const [selectedProject, setSelectedProject] = useState(null);
+    const projectTopRef = useRef(null);
+
     const scope = useRevealAnimation();
 
-    useLayoutEffect(() => {
-        if (selectedProject !== null) return;
-        if (!scope.current) return;
 
-        gsap.fromTo(
-            scope.current,
-            {
-                opacity: 0,
-                y: 20
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "power2.out"
-            }
-        );
-    }, [selectedProject]);
-    
-    if (selectedProject === "portfolio") {
-        return <PortfolioProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
+    function openProject(project) {
+
+        document.querySelector(".content-section")?.scrollIntoView({
+            behavior: "instant",
+            block: "start"
+        });
+
+        setSelectedProject(project);
     }
 
+    useLayoutEffect(function () {
+
+        if (selectedProject === null) return;
+
+        const frame = requestAnimationFrame(function () {
+
+            projectTopRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+        return function () {
+            cancelAnimationFrame(frame);
+        };
+
+    }, [selectedProject]);
+
+
+    if (selectedProject === "portfolio") {
+        return (
+            <div ref={projectTopRef}>
+                <PortfolioProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
+    }
+
+
     if (selectedProject === "dragon") {
-        return <ClayDragonProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
+        return (
+            <div ref={projectTopRef}>
+                <ClayDragonProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
     }
 
     if (selectedProject === "nsx") {
-        return <NSXProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
+        return (
+            <div ref={projectTopRef}>
+                <NSXProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
     }
+
     if (selectedProject === "piano") {
-        return <PianoProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
+        return (
+            <div ref={projectTopRef}>
+                <PianoProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
     }
+
     if (selectedProject === "chainedDragon") {
-        return <ChainedDragonProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
+        return (
+            <div ref={projectTopRef}>
+                <ChainedDragonProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
     }
+
     if (selectedProject === "robloxProject") {
-        return <RobloxProject darkMode={darkMode} setDarkMode={setDarkMode} goBack={function () {
-            setSelectedProject(null);
-        }} />;
-    }    
+        return (
+            <div ref={projectTopRef}>
+                <RobloxProject
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    goBack={function () {
+                        setSelectedProject(null);
+                    }}
+                />
+            </div>
+        );
+    }
+
 
     return (
-        <section className={darkMode ? "projects-section dark-mode" : "projects-section light-mode"} ref={scope}>
-            <h1 className="projects-title reveal"> MY PROJECTS</h1>
+        <section
+            className={
+                darkMode
+                    ? "projects-section dark-mode"
+                    : "projects-section light-mode"
+            }
+            ref={scope}
+        >
+
+            <h1 className="projects-title reveal">
+                MY PROJECTS
+            </h1>
+
 
             <div className="projects-grid">
 
                 <ProjectCard
                     title="Portfolio Website"
-                    description = "My personal website where I save my works and share a little about myself"
+                    description="My personal website where I save my works and share a little about myself"
                     image={webImage}
                     onClick={function () {
-                        setSelectedProject("portfolio");
+                        openProject("portfolio");
                     }}
                 />
+
 
                 <ProjectCard
                     title="Clay Dragon"
-                    description = "Clay scupture of a customly designed dragon"
+                    description="Clay sculpture of a customly designed dragon"
                     image={dragonImage}
                     onClick={function () {
-                        setSelectedProject("dragon");
+                        openProject("dragon");
                     }}
                 />
+
 
                 <ProjectCard
                     title="Honda NSX Model"
-                    description = "Blender model of the car Honda NSX(NA1)"
-                    image = {carImage}
-                    imageStyle={{ transform: "scale(2) translateX(3%)" }}
+                    description="Blender model of the car Honda NSX (NA1)"
+                    image={carImage}
+                    imageStyle={{
+                        transform: "scale(2) translateX(3%)"
+                    }}
                     onClick={function () {
-                        setSelectedProject("nsx");
+                        openProject("nsx");
                     }}
                 />
+
 
                 <ProjectCard
                     title="Clay Piano"
-                    description = "Clay Sculpture of a miniture grand piano"
-                    image = {pianoImage}
-                    imageStyle={{ objectPosition: "44% center"}}
+                    description="Clay sculpture of a miniature grand piano"
+                    image={pianoImage}
+                    imageStyle={{
+                        objectPosition: "44% center"
+                    }}
                     onClick={function () {
-                        setSelectedProject("piano");
+                        openProject("piano");
                     }}
                 />
+
 
                 <ProjectCard
                     title="Chained Dragon"
-                    description = "Clay Scupture of a Dragon breaking free from chains"
-                    image = {chainedDragonImage}
-                    imageStyle={{ objectPosition: "44% center"}}
+                    description="Clay sculpture of a dragon breaking free from chains"
+                    image={chainedDragonImage}
+                    imageStyle={{
+                        objectPosition: "44% center"
+                    }}
                     onClick={function () {
-                        setSelectedProject("chainedDragon");
+                        openProject("chainedDragon");
                     }}
                 />
 
+
                 <ProjectCard
                     title="My Roblox Game"
-                    description = "Roblox game that I developed with a small group of friends"
-                    image = {robloxImage}
+                    description="Roblox game that I developed with a small group of friends"
+                    image={robloxImage}
                     onClick={function () {
-                        setSelectedProject("robloxProject");
+                        openProject("robloxProject");
                     }}
                 />
 
             </div>
+
         </section>
     );
 }
+
 
 export default Projects;

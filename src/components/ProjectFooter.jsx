@@ -1,31 +1,46 @@
 import "./ProjectFooter.css";
 
-function ProjectFooter({ goBack }) {
+function ProjectFooter({ setActiveSection }) {
+
     return (
         <>
             <footer className="project-footer">
-                <p> any commments on my work? email me at jerry.ning1025!</p>
 
-                <button onClick={goBack}>
+                <p>
+                    Any comments on my work? Email me at jerry.ning1025!
+                </p>
+
+                <button
+                    onClick={function () {
+                        setActiveSection("about");
+                    }}
+                >
                     ABOUT ME
                 </button>
 
-                <button onClick={goBack}>
+                <button
+                    onClick={function () {
+                        setActiveSection("projects");
+                    }}
+                >
                     MY PROJECTS
                 </button>
 
-                <button>
-                    LINKEDIN
+                <button
+                    onClick={function () {
+                        setActiveSection("contact");
+                    }}
+                >
+                    CONTACT
                 </button>
 
             </footer>
-        
-            <div className="copyright"> 
+
+            <div className="copyright">
                 <p>
                     © JERRY NING
                 </p>
             </div>
-            
         </>
     );
 }

@@ -1,0 +1,329 @@
+/* ============================================================
+   MOBILE / TABLET RESPONSIVE OVERRIDES
+   Imported last in main.jsx so these rules win on small screens.
+============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+img, canvas { max-width: 100%; }
+
+@media (max-width: 900px) {
+    /* ---------- GLOBAL ---------- */
+    body { background-attachment: scroll; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .theme-toggle {
+        top: 12px;
+        right: 12px;
+        padding: 8px 11px;
+        font-size: 0.7rem;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        width: 100%;
+        height: 100svh;
+    }
+
+    .hero h1 {
+        font-size: clamp(4rem, 19vw, 8rem);
+        line-height: .9;
+    }
+
+    #form-title {
+        top: 18%;
+        left: 4vw;
+    }
+
+    #function-title {
+        right: 3vw;
+        bottom: 8%;
+    }
+
+    #school-info {
+        top: 3%;
+        left: 4%;
+        gap: 5px;
+        max-width: 42vw;
+    }
+
+    #school-info p,
+    #top-title p,
+    #metadata p,
+    #mouse-thing p {
+        font-size: clamp(.48rem, 1.8vw, .72rem);
+    }
+
+    #top-title {
+        top: 3%;
+        gap: 12px;
+    }
+
+    #top-title h2 { font-size: clamp(.8rem, 3vw, 1.15rem); }
+    #top-title .row { gap: 3px; }
+    #top-title .row img { width: 18px; height: 18px; object-fit: contain; }
+
+    .highlight {
+        height: auto;
+        width: min(68vw, 430px);
+        aspect-ratio: 580 / 390;
+        top: 2%;
+    }
+
+    #metadata {
+        left: auto;
+        right: -27vw;
+        bottom: 28%;
+        width: 25vw;
+        gap: 3px;
+    }
+
+    #metadata h2 { font-size: clamp(.55rem, 2vw, .9rem); }
+    #metadata p { margin: 0 0 3px; }
+
+    #mouse-thing {
+        left: 0;
+        bottom: -22%;
+        gap: 7px;
+    }
+
+    .hero .scroll-text {
+        bottom: 2.5%;
+        font-size: .6rem;
+    }
+
+    #floor { height: 43%; }
+
+    /* ---------- NAV ---------- */
+    .main-nav {
+        height: 64px;
+        margin-top: 7vh;
+        gap: 0;
+        justify-content: space-evenly;
+    }
+
+    .main-nav::before { height: 7vh; }
+    .main-nav button { font-size: clamp(.68rem, 2.7vw, .9rem); padding: 12px 8px; }
+
+    /* ---------- ABOUT / CONTACT ---------- */
+    .about-section,
+    .contact-section {
+        min-height: 75svh;
+        padding: 72px 7vw;
+    }
+
+    .about-title { font-size: clamp(2.3rem, 11vw, 4.5rem); }
+    .about-text { font-size: .9rem; line-height: 1.7; }
+    .contact-title { font-size: clamp(3rem, 15vw, 6rem); line-height: .95; }
+    .contact-links { flex-wrap: wrap; gap: 1.2rem 1.7rem; margin-top: 2rem; }
+
+    /* ---------- PROJECT LIST ---------- */
+    .projects-section { padding: 90px 5vw 70px; }
+    .projects-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: clamp(2.5rem, 12vw, 5rem);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 1rem;
+        margin: 0 auto;
+    }
+
+    .project-card { height: clamp(340px, 62vw, 520px); padding: 1rem; }
+    .project-card h3 { font-size: clamp(1rem, 4vw, 1.8rem); bottom: 12%; }
+    .project-card p { max-width: 80%; font-size: clamp(.55rem, 1.7vw, .75rem); }
+
+    /* ---------- FOOTER ---------- */
+    .project-footer { padding: 1.4rem .75rem; gap: .5rem; }
+    .project-footer button { font-size: .62rem; letter-spacing: .08em; padding: .6rem; }
+    .project-footer::before { height: 30vh; }
+    .project-footer p { font-size: .58rem; bottom: calc(100% + 1vh); }
+
+    /* ---------- ALL PROJECT DETAIL PAGES ---------- */
+    .clay-project,
+    .piano-project,
+    .nsx-project,
+    .portfolio-project,
+    .roblox-project,
+    .chained-project { overflow-x: hidden; }
+
+    .intro-content,
+    .piano-content,
+    .nsx-content,
+    .portfolio-content,
+    .roblox-content,
+    .chained-content {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .back-button,
+    .piano-back-button,
+    .nsx-back-button,
+    .portfolio-back-button,
+    .roblox-back-button,
+    .chained-back-button {
+        top: 14px;
+        left: 14px;
+        padding: 8px 13px;
+        font-size: .65rem;
+        z-index: 50;
+    }
+
+    .page-hero,
+    .piano-hero,
+    .nsx-hero,
+    .portfolio-hero,
+    .roblox-hero {
+        height: clamp(280px, 62vw, 480px);
+    }
+
+    .page-hero h1,
+    .piano-hero h1,
+    .nsx-hero h1,
+    .portfolio-hero h1,
+    .roblox-hero h1 {
+        font-size: clamp(2.2rem, 10vw, 5rem);
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        aspect-ratio: 16/9;
+        width:100vw;
+        height:auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(1rem, 10vw, 8rem);
+        line-height: .9;
+    }
+
+    .hero #form-title {
+        left:10vw;
+        top:9vh;
+    }
+
+
+    /* Hero is intentionally simplified on phones so labels do not collide. */
+    #school-info { max-width: 48vw; }
+    #school-info p { font-size: .5rem; }
+    #top-title { top: 9%; }
+    #top-title > p { display: none; }
+    #form-title { top: 23%; }
+    #function-title { bottom: 11%; }
+
+    .highlight { width: 78vw; }
+    #metadata { display: none; }
+    #mouse-thing { left: 2%; bottom: -24%; }
+
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card { height: min(118vw, 560px); }
+    .project-card h3 { font-size: clamp(1.4rem, 7vw, 2.2rem); }
+    .project-card p { font-size: .68rem; }
+
+    .contact-links { flex-direction: column; align-items: flex-start; }
+
+    .project-footer { flex-wrap: wrap; justify-content: center; }
+    .project-footer button { flex: 1 1 30%; }
+
+    /* Project detail pages: force complex desktop compositions into readable stacks. */
+    .intro-section,
+    .process-layout,
+    .unpainted-section,
+    .final-top-row,
+    .final-gallery,
+    .piano-intro,
+    .piano-process-top,
+    .piano-process-bottom,
+    .piano-gallery-top,
+    .piano-showcase,
+    .piano-gallery-bottom,
+    .nsx-description,
+    .nsx-gallery,
+    .nsx-bottom-gallery,
+    .portfolio-top-gallery,
+    .portfolio-bottom-gallery,
+    .roblox-boat-section,
+    .roblox-environment,
+    .roblox-monster-section,
+    .roblox-final-gallery,
+    .chained-gallery {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        width: 100% !important;
+        gap: 18px !important;
+    }
+
+    .intro-section > *,
+    .process-layout > *,
+    .unpainted-section > *,
+    .final-top-row > *,
+    .final-gallery > *,
+    .piano-intro > *,
+    .piano-process-top > *,
+    .piano-process-bottom > *,
+    .piano-gallery-top > *,
+    .piano-showcase > *,
+    .piano-gallery-bottom > *,
+    .nsx-description > *,
+    .nsx-gallery > *,
+    .nsx-bottom-gallery > *,
+    .portfolio-top-gallery > *,
+    .portfolio-bottom-gallery > *,
+    .roblox-boat-section > *,
+    .roblox-environment > *,
+    .roblox-monster-section > *,
+    .roblox-final-gallery > *,
+    .chained-gallery > * {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        transform: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .piano-process-text,
+    .piano-showcase-text,
+    .roblox-description,
+    .nsx-description,
+    .portfolio-description,
+    .chained-description,
+    .process-text,
+    .final-description {
+        width: 100% !important;
+        margin: 1.5rem 0 !important;
+        padding: 0 0 0 1rem !important;
+        font-size: .78rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .piano-process-top img,
+    .piano-process-large,
+    .piano-gallery-top img,
+    .piano-gallery-bottom img,
+    .nsx-project img,
+    .portfolio-project img,
+    .roblox-project img,
+    .chained-project img {
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain;
+    }
+
+    .piano-small-images { flex-direction: row; gap: 10px; }
+    .piano-small-images img { width: calc(50% - 5px) !important; aspect-ratio: auto; }
+
+    .portfolio-version,
+    .portfolio-arrow { display: none; }
+}

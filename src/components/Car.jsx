@@ -273,8 +273,7 @@ function Car({ darkMode }) {
         const camera =
             new THREE.PerspectiveCamera(
                 35,
-                window.innerWidth /
-                    window.innerHeight,
+                container.clientWidth / container.clientHeight,
                 0.1,
                 1000
             );
@@ -349,8 +348,8 @@ function Car({ darkMode }) {
 
 
         renderer.setSize(
-            window.innerWidth,
-            window.innerHeight
+            container.clientWidth,
+            container.clientHeight
         );
 
 
@@ -1690,18 +1689,15 @@ function Car({ darkMode }) {
         function handleResize() {
 
             camera.aspect =
-                window.innerWidth /
-                window.innerHeight;
-
+                container.clientWidth /
+                container.clientHeight;
 
             camera.updateProjectionMatrix();
 
-
             renderer.setSize(
-                window.innerWidth,
-                window.innerHeight
+                container.clientWidth,
+                container.clientHeight
             );
-
         }
 
 
