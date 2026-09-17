@@ -62,7 +62,7 @@
     font-size: clamp(6rem, 12vw, 15rem);
 }
 
-h1::after {
+.hero .h1::after {
     position: absolute;
     top: 85%;
     left: 50%;
@@ -275,11 +275,14 @@ h1::after {
 
 /* scroll */
 
-.scroll-text {
+.hero .scroll-text {
     position: absolute;
     bottom: 4%;
     z-index: 2;
     animation: scrollHint 5s ease-in-out infinite;
+    text-align: center;
+    transform: translateX(-50%);
+    
 }
 
 @keyframes scrollHint {

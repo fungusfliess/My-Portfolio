@@ -280,4 +280,25 @@
 /* LIGHT MODE */
 .nsx-project.light-mode { background-color: #acacac; color: black; }
 .nsx-project.light-mode .nsx-description p { color: #333; }
-.nsx-project.light-mode .nsx-back-button { color: black; border-color: rgba(0,0,0,0.4); }
+
+.nsx-hero::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 40%
+    ), linear-gradient(
+        to top,
+        black 0%,
+        transparent 40%
+    );
+;
+
+    pointer-events: none;
+
+    z-index: 1;
+}

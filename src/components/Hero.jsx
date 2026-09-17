@@ -1,6 +1,5 @@
 import "./Hero.css";
 import Car from "./Car.jsx";
-import ProjectFooter from "./ProjectFooter.jsx";
 
 function Hero({ darkMode, setDarkMode }) {
 
@@ -55,8 +54,7 @@ function Hero({ darkMode, setDarkMode }) {
             </div>
 
             <p className="scroll-text">
-                        LEARN MORE
-                        <br />
+                        LEARN MORE <br />
                         ↓
             </p>
 

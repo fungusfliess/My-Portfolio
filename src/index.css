@@ -95,23 +95,36 @@ p {
     font-weight: 400;
 }
 
-body h1,
-body h2,
-body p,
-body span,
-body a{
+/* ============================================================
+   GLOBAL TEXT COLORS
+============================================================ */
+
+/* LIGHT MODE */
+
+body h2:not(button *):not(.project-card *):not(.section-hero *),
+body h3:not(button *):not(.project-card *),
+body p:not(button *):not(.project-card *):not(.project-footer *):not(.copyright *),
+body span:not(button *):not(.project-card *),
+body a:not(button *):not(.project-card *) {
     color: black;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode p,
-body.dark-mode span,
-body.dark-mode a{
+
+/* DARK MODE */
+
+body.dark-mode h2:not(button *):not(.project-card *):not(.section-hero *),
+body.dark-mode h3:not(button *):not(.project-card *),
+body.dark-mode p:not(button *):not(.project-card *):not(.project-footer *):not(.copyright *),
+body.dark-mode span:not(button *):not(.project-card *),
+body.dark-mode a:not(button *):not(.project-card *) {
     color: white;
 }
 
 button {
     border-color: white;
+    color:white;
 }
+
+.home.dark-mode .scroll-text {
+    color:#111111;
+} 

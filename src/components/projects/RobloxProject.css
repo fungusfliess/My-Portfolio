@@ -369,4 +369,25 @@
 /* LIGHT MODE */
 .roblox-project.light-mode { background-color: #acacac; color: black; }
 .roblox-project.light-mode .roblox-description p { color: #333; }
-.roblox-project.light-mode .roblox-back-button { color: black; border-color: rgba(0,0,0,0.4); }
+
+.roblox-hero::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 40%
+    ), linear-gradient(
+        to top,
+        black 0%,
+        transparent 40%
+    );
+;
+
+    pointer-events: none;
+
+    z-index: 1;
+}

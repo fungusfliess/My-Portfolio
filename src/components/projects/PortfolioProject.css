@@ -38,7 +38,27 @@
 /* ============================================================
    HERO
 ============================================================ */
+.portfolio-hero::before{
+    content: "";
 
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 40%
+    ), linear-gradient(
+        to top,
+        black 0%,
+        transparent 40%
+    );
+;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
 .portfolio-hero {
     position: relative;
 
@@ -296,4 +316,4 @@
 .portfolio-project.light-mode { background-color: #acacac; color: black; }
 .portfolio-project.light-mode .portfolio-description p { color: #333; }
 .portfolio-project.light-mode .portfolio-version span { color: black; }
-.portfolio-project.light-mode .portfolio-back-button { color: black; border-color: rgba(0,0,0,0.4); }
+
